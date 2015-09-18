@@ -1,0 +1,17 @@
+Package: polloi
+Type: Package
+Title: Common Functionality for Wikimedia Dashboards
+Version: 0.0.1
+Date: 2015-09-14
+Author: Oliver Keyes [aut, cre], Mikhail Popov [aut]
+Maintainer: Who to complain to <yourfault@somewhere.net>
+Description: This package (which I can say because BDR is nowhere in sight) contains common functionality
+             for all of the Wikimedia Foundation's shiny dashboards.
+License: MIT + file LICENSE
+Depends:
+        magrittr,
+        dygraphs,
+        RColorBrewer,
+        xts,
+        readr
+LazyData: TRUE
