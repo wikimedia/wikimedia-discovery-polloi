@@ -55,3 +55,41 @@ make_dygraph <- function(data, xlab, ylab, title, legend_name = NULL, use_si = T
                      includeZero = TRUE) %>%
            dyCSS(css = system.file("custom.css", package = "polloi")))
 }
+
+#'@title Select a Colour Conditionally
+#'@description select a colour based on the true/false nature of a condition.
+#'Uses green as the "true" colour by default, "red" as false, and
+#'
+#'@param condition a condition to be evaluated to produce a single TRUE or FALSE value
+#'
+#'@param true_color the colour used to represent a TRUE result. Green by default.
+#'
+#'@export
+cond_color <- function(condition, true_color = "green") {
+  if(is.na(condition)){
+    return("black")
+  }
+
+  colours <- c("green","red")
+  return(ifelse(condition, true_color, colours[!colours == true_color]))
+}
+
+#'@title Select an appropriate directional icon
+#'@description allows you to select an appropriate directional icon for a change
+#'in condition.
+#'
+#'@param condition a condition to be evaluated to produce a single TRUE/FALSE
+#'
+#'@param true_direction which direction represents a positive change. "up" by
+#'default.
+#'
+#'@importFrom shiny icon
+#'@export
+cond_icon <- function(condition, true_direction = "up") {
+
+  if (true_direction == "up") {
+    return(shiny::icon(ifelse(condition, "arrow-up", "arrow-down")))
+  }
+
+  return(shiny::icon(ifelse(condition, "arrow-down", "arrow-up")))
+}

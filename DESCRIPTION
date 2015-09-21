@@ -8,10 +8,14 @@ Maintainer: Who to complain to <yourfault@somewhere.net>
 Description: This package (which I can say because BDR is nowhere in sight) contains common functionality
              for all of the Wikimedia Foundation's shiny dashboards.
 License: MIT + file LICENSE
-Depends:
+Imports:
         magrittr,
         dygraphs,
         RColorBrewer,
         xts,
-        readr
+        readr,
+        lubridate,
+        plyr,
+        shiny,
+        zoo
 LazyData: TRUE
