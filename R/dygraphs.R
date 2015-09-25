@@ -29,15 +29,15 @@
 #'@importFrom magrittr "%>%"
 #'
 #'@export
-make_dygraph <- function(data, xlab, ylab, title, legend_name = NULL, use_si = TRUE, expr = NULL){
+make_dygraph <- function(data, xlab, ylab, title, legend_name = NULL, use_si = TRUE, expr = NULL) {
 
   #Evaluate the expression
   expr
 
   # If we've only got a single variable reformatting into an XTS looks weird, but otherwise we're
   # all cool.
-  if(ncol(data) == 2 || length(unique(data[,2])) == 1){
-    if(is.null(legend_name)){
+  if (ncol(data) == 2) {
+    if (is.null(legend_name)) {
       legend_name <- names(data)[2]
     }
     data <- xts(data[, ncol(data)], data[, 1])
@@ -66,7 +66,7 @@ make_dygraph <- function(data, xlab, ylab, title, legend_name = NULL, use_si = T
 #'
 #'@export
 cond_color <- function(condition, true_color = "green") {
-  if(is.na(condition)){
+  if (is.na(condition)) {
     return("black")
   }
 
