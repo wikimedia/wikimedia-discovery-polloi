@@ -4,10 +4,12 @@
 \alias{read_dataset}
 \title{Read Datasets from datasets.wikimedia}
 \usage{
-read_dataset(path)
+read_dataset(path, ...)
 }
 \arguments{
 \item{path}{the path to the file, starting from datasets.wikimedia.org/aggregate-datasets/}
+
+\item{...}{Additional arguments to be passed to \code{readr::read_delim}}
 }
 \description{
 Grabs datasets from the public directories at
