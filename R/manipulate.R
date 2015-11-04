@@ -50,3 +50,34 @@ half <- function(x, top = TRUE){
   }
   return(tail(x, n = length(x)/2))
 }
+
+#'@title Subset a data frame by a date range
+#'@param x Data frame
+#'@param range A vector of length 2
+#'@param from,to A character or Date object to use as upper/lower bound for
+#'  the subsetting.
+#'@param date_col Just in case the date column is named something else other
+#'  than 'date'
+#'@importFrom lubridate ymd
+#'@export
+subset_by_date_range <- function(x, range = NULL, from = NULL, to = NULL, date_col = "date") {
+  if (!is.null(range)) {
+    from <- range[1]
+    to <- range[2]
+  }
+  if (is.null(from)) {
+    warning('Need a "from" date. Returning the original data frame.')
+    return(x)
+  }
+  if (is.null(to)) {
+    warning('No "to" data so defaulting to yesterday.')
+    to <- Sys.Date() - 1
+  }
+  if (is.character(from)) {
+    from <- as.Date(from)
+  }
+  if (is.character(to)) {
+    to <- as.Date(to)
+  }
+  return(x[x[[date_col]] >= from & x[[date_col]] <= to, ])
+}

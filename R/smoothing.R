@@ -39,15 +39,6 @@ smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
   # a smoothing level of "day" is assumed, which is no smoothing
   # whatsoever, and so the original dataset is returned.
   switch(smooth_level,
-         moving_avg = {
-           df <- apply(dataset[, -1, drop = FALSE], 2, function(x) {
-             y <- xts::xts(x, dataset[, 1])
-             return(as.numeric(zoo::rollmean(x, k = 17, fill = NA)))
-           }) %>% as.data.frame %>% cbind(timestamp = dataset[, 1], .)
-           names(df) <- names(dataset)
-           if (rename) names(df)[-1] <- paste(names(df)[-1], " (Moving average)")
-           return(df)
-         },
          week = {
            dataset$filter_1 <- lubridate::week(dataset[, 1])
            dataset$filter_2 <- lubridate::year(dataset[, 1])
