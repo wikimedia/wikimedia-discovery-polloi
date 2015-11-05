@@ -34,13 +34,16 @@ make_dygraph <- function(data, xlab, ylab, title, legend_name = NULL, use_si = T
   #Evaluate the expression
   expr
 
+  # Make sure we're not dealing with tbl_df or data.table nonsense
+  class(data) <- "data.frame"
+
   # If we've only got a single variable reformatting into an XTS looks weird, but otherwise we're
   # all cool.
   if (ncol(data) == 2) {
     if (is.null(legend_name)) {
       legend_name <- names(data)[2]
     }
-    data <- xts(data[, ncol(data)], data[, 1])
+    data <- xts(data[[2]], data[[1]])
     names(data) <- legend_name
   } else {
     data <- xts::xts(data[,-1], order.by = data[[1]])
