@@ -1,8 +1,8 @@
 Package: polloi
 Type: Package
 Title: Common Functionality for Wikimedia Dashboards
-Version: 0.0.4
-Date: 2015-09-30
+Version: 0.0.5
+Date: 2015-11-04
 Author: Oliver Keyes [aut, cre], Mikhail Popov [aut]
 Maintainer: Oliver Keyes <okeyes@wikimedia.org>
 Description: This package (which I can say because BDR is nowhere in sight) contains common functionality

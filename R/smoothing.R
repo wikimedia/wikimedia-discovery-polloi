@@ -40,13 +40,13 @@ smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
   # whatsoever, and so the original dataset is returned.
   switch(smooth_level,
          week = {
-           dataset$filter_1 <- lubridate::week(dataset[, 1])
-           dataset$filter_2 <- lubridate::year(dataset[, 1])
+           dataset$filter_1 <- lubridate::week(dataset[[1]])
+           dataset$filter_2 <- lubridate::year(dataset[[1]])
            name_append <- ifelse(rename, " (Weekly average)", "")
          },
          month = {
-           dataset$filter_1 <- lubridate::month(dataset[, 1])
-           dataset$filter_2 <- lubridate::year(dataset[, 1])
+           dataset$filter_1 <- lubridate::month(dataset[[1]])
+           dataset$filter_2 <- lubridate::year(dataset[[1]])
            name_append <- ifelse(rename, " (Monthly average)", "")
          },
          {

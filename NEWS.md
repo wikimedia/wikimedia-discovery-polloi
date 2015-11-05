@@ -1,3 +1,7 @@
+polloi 0.0.5
+=============
+- Added subsetting by date range
+
 polloi 0.0.4
 =============
 - Added a change log
