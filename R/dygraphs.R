@@ -1,4 +1,4 @@
-#'@title Construct a Standard Wikimedia Dygraph
+#'@title Construct a Standard Wikimedia Discovery Dygraph
 #'@description Construct a dygraph using the custom formatting Wikimedia dashboards use
 #'as standard. This is nothing special - a standard dygraph with a bit of custom CSS
 #'shipped with the package - but it's surrounded by code that allows the function to
@@ -17,8 +17,13 @@
 #'
 #'@param use_si whether to use si labelling (1000 becomes 1K). TRUE by default.
 #'
-#'@param expr an optional expression to evaluate prior to building the dygraph. We use this in
-#'(for example) reactive graphing.
+#'@param expr an optional expression to evaluate prior to building the dygraph.
+#'  We use this in (for example) reactive graphing.
+#'
+#'@param group Group to associate this plot with. The x-axis zoom level of
+#'  plots within a group is automatically synchronized.
+#'
+#'@param ... Additional parameters to pass on to \code{dyOptions}.
 #'
 #'@importFrom dygraphs renderDygraph dyCSS dyOptions dyLegend dygraph
 #'
@@ -29,7 +34,9 @@
 #'@importFrom magrittr "%>%"
 #'
 #'@export
-make_dygraph <- function(data, xlab, ylab, title, legend_name = NULL, use_si = TRUE, expr = NULL) {
+make_dygraph <- function(data, xlab, ylab, title,
+                         legend_name = NULL, use_si = TRUE, expr = NULL,
+                         group = NULL, ...) {
 
   #Evaluate the expression
   expr
@@ -50,12 +57,12 @@ make_dygraph <- function(data, xlab, ylab, title, legend_name = NULL, use_si = T
   }
 
   # Construct and return the dygraph
-  return(dygraph(data, main = title, xlab = xlab, ylab = ylab) %>%
+  return(dygraph(data, main = title, xlab = xlab, ylab = ylab, group = group) %>%
            dyLegend(width = 400, show = "always") %>%
            dyOptions(strokeWidth = 3,
                      colors = brewer.pal(max(3, ncol(data)), "Set2"),
                      drawPoints = FALSE, pointSize = 3, labelsKMB = use_si,
-                     includeZero = TRUE) %>%
+                     includeZero = TRUE, ...) %>%
            dyCSS(css = system.file("custom.css", package = "polloi")))
 }
 
@@ -96,3 +103,25 @@ cond_icon <- function(condition, true_direction = "up") {
 
   return(shiny::icon(ifelse(condition, "arrow-down", "arrow-up")))
 }
+
+#'@title Custom Axis Formatter
+#'@description This is a JS date formatter to be used in \code{dyAxis} when
+#'  it's desired to have the dates on the axis look like "Monday (8/13)", in
+#'  other words: "Day of the week (MM/DD)"
+#'@export
+#'@examples
+#'\dontrun{
+#'polloi::make_dygraph(data) %>%
+#'  dyAxis("x", axisLabelFormatter = polloi::custom_axis_formatter)
+#'}
+custom_axis_formatter <- 'function (d, gran) {
+var weekday = new Array(7);
+weekday[0]=  "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+return weekday[d.getDay()] + " (" + (d.getMonth()+1) + "/" + d.getDate() + ")";
+}'

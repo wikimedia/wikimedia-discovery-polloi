@@ -1,21 +1,26 @@
+polloi 0.0.6
+============
+- Added features from Search Metrics dashboard
+  to be used across all dashboards.
+
 polloi 0.0.5
 =============
-- Added subsetting by date range
+- Added subsetting by date range.
 
 polloi 0.0.4
 =============
-- Added a change log
-- Added a contributor code of conduct
-- Added a readme
+- Added a change log.
+- Added a contributor code of conduct.
+- Added a readme.
 
 polloi 0.0.3
 =============
-- Updated reading to support optional arguments
+- Updated reading to support optional arguments.
 
 polloi 0.0.2
 =============
-- Made make_dygraph support reactivity
+- Made make_dygraph support reactivity.
 
 polloi 0.0.1
 =============
-- Initial release
+- Initial release.

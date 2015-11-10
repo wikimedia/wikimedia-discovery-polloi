@@ -1,21 +1,28 @@
 Package: polloi
 Type: Package
 Title: Common Functionality for Wikimedia Dashboards
-Version: 0.0.5
-Date: 2015-11-04
-Author: Oliver Keyes [aut, cre], Mikhail Popov [aut]
-Maintainer: Oliver Keyes <okeyes@wikimedia.org>
-Description: This package (which I can say because BDR is nowhere in sight) contains common functionality
-             for all of the Wikimedia Foundation's shiny dashboards.
+Version: 0.0.6
+Date: 2015-11-10
+Authors@R: c(
+    person("Oliver", "Keyes", , "okeyes@wikimedia.org", role = c("aut", "cre")),
+    person("Mikhail", "Popov", , "mpopov@wikimedia.org", role = "aut")
+    )
+Description: This package contains common functionality for all of the
+    Wikimedia Foundation's Shiny Dashboards.
 License: MIT + file LICENSE
+URL: https://git.wikimedia.org/summary/wikimedia%2Fdiscovery%2Fpolloi
+BugReports: https://phabricator.wikimedia.org/maniphest/task/create/?projects=Search-Team
+Depends:
+    R (>= 3.0.2)
 Imports:
-        magrittr,
-        dygraphs,
-        RColorBrewer,
-        xts,
-        readr,
-        lubridate,
-        plyr,
-        shiny,
-        zoo
+    magrittr,
+    dygraphs,
+    RColorBrewer,
+    xts,
+    readr,
+    lubridate,
+    plyr,
+    shiny,
+    zoo
 LazyData: TRUE
+RoxygenNote: 5.0.0

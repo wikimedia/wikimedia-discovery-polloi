@@ -81,3 +81,16 @@ subset_by_date_range <- function(x, range = NULL, from = NULL, to = NULL, date_c
   }
   return(x[x[[date_col]] >= from & x[[date_col]] <= to, ])
 }
+
+#'@title Safely Combine R Objects of Variying Lengths by Columns
+#'@description Take a sequence of vector, matrix or data-frame arguments and
+#'  combine by columns or rows, respectively.
+#'@param ... Vectors or matrices.
+#'@return A matrix with NAs wherever needed.
+#'@references \url{http://r.789695.n4.nabble.com/How-to-join-matrices-of-different-row-length-from-a-list-td3177212.html}
+#'@export
+cbind_fill <- function(...) {
+  nm <- lapply(list(...), as.matrix)
+  n <- max(sapply(nm, nrow))
+  do.call(cbind, lapply(nm, function (x) rbind(x, matrix(, n-nrow(x), ncol(x)))))
+}
