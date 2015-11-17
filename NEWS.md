@@ -1,3 +1,8 @@
+polloi 0.0.7
+============
+- Added function for checking dataset for missing
+  data and creating a notification if any detected.
+
 polloi 0.0.6
 ============
 - Added features from Search Metrics dashboard

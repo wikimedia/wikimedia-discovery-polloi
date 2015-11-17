@@ -35,6 +35,9 @@ time_frame_range(input$timeframe, input$daterange,
 }
 }
 \seealso{
-subset_by_date_range
+\code{\link{subset_by_date_range}}
+
+Other Shiny Dashboarding: \code{\link{check_notify}},
+  \code{\link{cond_color}}, \code{\link{cond_icon}}
 }
 

@@ -1,8 +1,8 @@
 Package: polloi
 Type: Package
 Title: Common Functionality for Wikimedia Dashboards
-Version: 0.0.6
-Date: 2015-11-10
+Version: 0.0.7
+Date: 2015-11-17
 Authors@R: c(
     person("Oliver", "Keyes", , "okeyes@wikimedia.org", role = c("aut", "cre")),
     person("Mikhail", "Popov", , "mpopov@wikimedia.org", role = "aut")
@@ -11,7 +11,8 @@ Description: This package contains common functionality for all of the
     Wikimedia Foundation's Shiny Dashboards.
 License: MIT + file LICENSE
 URL: https://git.wikimedia.org/summary/wikimedia%2Fdiscovery%2Fpolloi
-BugReports: https://phabricator.wikimedia.org/maniphest/task/create/?projects=Search-Team
+BugReports: https://phabricator.wikimedia.org/maniphest/task/create/?
+    projects=Search-Team
 Depends:
     R (>= 3.0.2)
 Imports:
@@ -23,6 +24,7 @@ Imports:
     lubridate,
     plyr,
     shiny,
+    shinydashboard,
     zoo
 LazyData: TRUE
-RoxygenNote: 5.0.0
+RoxygenNote: 5.0.1

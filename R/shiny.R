@@ -13,7 +13,7 @@ smooth_select <- function(input_id, label = "Smoothing") {
 #'@param label Label
 #'@return A \code{selectInput}
 #'@family inputs
-#'@seealso timeframe_daterange
+#'@seealso timeframe_daterange "Shiny Dashboarding"
 #'@export
 timeframe_select <- function(input_id, label = "Time Frame") {
   return(selectInput(inputId = input_id, label = label, selectize = TRUE, selected = "global",
@@ -53,7 +53,8 @@ timeframe_daterange <- function(select_input_id, label = "Custom Date Range") {
 #'time_frame_range(input$timeframe, input$daterange,
 #'                 input$timeframe_global, input$daterange_global)
 #'}
-#'@seealso subset_by_date_range
+#'@seealso \code{\link{subset_by_date_range}}
+#'@family Shiny Dashboarding
 #'@export
 time_frame_range <- function(input_local_timeframe,
                              input_local_daterange,

@@ -16,8 +16,9 @@ make_dygraph(data, xlab, ylab, title, legend_name = NULL, use_si = TRUE,
 
 \item{title}{the title to use on the dygraph.}
 
-\item{legend_name}{a custom name for the variable in the event that \code{is_single} is TRUE.
-NULL by default (in which case the variable will be named "events").}
+\item{legend_name}{a custom name for the variable in the event that
+\code{is_single} is TRUE. NULL by default (in which case the variable
+will be named "events").}
 
 \item{use_si}{whether to use si labelling (1000 becomes 1K). TRUE by default.}
 
@@ -30,9 +31,10 @@ plots within a group is automatically synchronized.}
 \item{...}{Additional parameters to pass on to \code{dyOptions}.}
 }
 \description{
-Construct a dygraph using the custom formatting Wikimedia dashboards use
-as standard. This is nothing special - a standard dygraph with a bit of custom CSS
-shipped with the package - but it's surrounded by code that allows the function to
-turn all our usual data.frame formats into XTS objects.
+Construct a dygraph using the custom formatting Wikimedia
+ dashboards use as standard. This is nothing special - a standard dygraph
+ with a bit of custom CSS shipped with the package - but it's surrounded by
+ code that allows the function to turn all our usual data.frame formats
+ into XTS objects.
 }
 

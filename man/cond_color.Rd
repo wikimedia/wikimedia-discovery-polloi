@@ -7,12 +7,18 @@
 cond_color(condition, true_color = "green")
 }
 \arguments{
-\item{condition}{a condition to be evaluated to produce a single TRUE or FALSE value}
+\item{condition}{a condition to be evaluated to produce a single TRUE or
+FALSE value.}
 
-\item{true_color}{the colour used to represent a TRUE result. Green by default.}
+\item{true_color}{the colour used to represent a TRUE result. Green by
+default.}
 }
 \description{
 select a colour based on the true/false nature of a condition.
 Uses green as the "true" colour by default, "red" as false, and
+}
+\seealso{
+Other Shiny Dashboarding: \code{\link{check_notify}},
+  \code{\link{cond_icon}}, \code{\link{time_frame_range}}
 }
 

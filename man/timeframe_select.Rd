@@ -15,7 +15,7 @@ timeframe_select(input_id, label = "Time Frame")
 A \code{selectInput}
 }
 \seealso{
-timeframe_daterange
+timeframe_daterange "Shiny Dashboarding"
 
 Other inputs: \code{\link{smooth_select}},
   \code{\link{timeframe_daterange}}

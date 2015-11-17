@@ -1,14 +1,11 @@
 #'@title Switch between global and local smoothing
-#'
-#'@description We use a lot of smoothing in our reactive graphs,
-#'and tend to offer both global (entire dashboard) and local (tab-specific) smoothing options.
-#'\code{smooth_switch} is a simple function to abstract away the logic behind determining whether
-#'the global or local option should be relied on.
-#'
+#'@description We use a lot of smoothing in our reactive graphs, and tend to
+#'  offer both global (entire dashboard) and local (tab-specific) smoothing
+#'  options. \code{smooth_switch} is a simple function to abstract away the
+#'  logic behind determining whether the global or local option should be
+#'  relied on.
 #'@param global the input variable for global smoothing.
-#'
 #'@param local the input variable for local smoothing.
-#'
 #'@export
 smooth_switch <- function(global, local){
   if(local == "global"){
@@ -18,23 +15,17 @@ smooth_switch <- function(global, local){
 }
 
 #' @title Dynamically Smooth Data
-#'
 #' @description Takes an untidy (read: dygraph-appropriate) dataset and adds
 #' columns for each variable consisting of the smoothed, averaged mean.
-#'
 #' @param dataset an untidy, dygraph-appropriate data.frame
-#'
 #' @param smooth_level the level of smoothing. Options are "day", "moving_avg",
 #' "week" and "month".
-#'
 #' @param rename whether to rename the fields once smoothed. TRUE by default.
-#'
 #' @export
 #' @importFrom plyr ddply
 #' @importFrom lubridate week year month
 #' @importFrom zoo rollmean
 smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
-
   # Determine the names and levels of aggregation. By default
   # a smoothing level of "day" is assumed, which is no smoothing
   # whatsoever, and so the original dataset is returned.
@@ -56,7 +47,6 @@ smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
 
   # If we're still here it was weekly or monthly. Calculate
   # the average for each unique permutation of filters
-
   result <- plyr::ddply(.data = dataset,
                         .variables = c("filter_1", "filter_2"),
                         .fun = function(df, name_append){
