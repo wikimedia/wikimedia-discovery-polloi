@@ -86,3 +86,18 @@ cbind_fill <- function(...) {
   n <- max(sapply(nm, nrow))
   do.call(cbind, lapply(nm, function (x) rbind(x, matrix(, n-nrow(x), ncol(x)))))
 }
+
+#'@title Conditionally Select A Dataset
+#'@description Like \code{ifelse}, but not awful and usable with
+#'  \code{data.frames}.
+#'@param test an object which can be coerced to logical mode.
+#'@param yes_set the dataset to return if \code{test} is true.
+#'@param no_set the dataset to return if \code{test} is false.
+#'@return The appropriate object.
+#'@export
+data_select <- function(test, yes_set, no_set){
+  if (test) {
+    return(yes_set)
+  }
+  return(no_set)
+}
