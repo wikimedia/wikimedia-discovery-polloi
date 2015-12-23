@@ -17,7 +17,8 @@ A \code{selectInput}
 \seealso{
 timeframe_daterange "Shiny Dashboarding"
 
-Other inputs: \code{\link{smooth_select}},
+Other inputs: \code{\link{automata_select}},
+  \code{\link{smooth_select}},
   \code{\link{timeframe_daterange}}
 }
 

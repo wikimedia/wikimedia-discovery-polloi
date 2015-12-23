@@ -18,7 +18,8 @@ A \code{conditionalPanel} containing a \code{dateRangeInput}
 \seealso{
 timeframe_select
 
-Other inputs: \code{\link{smooth_select}},
+Other inputs: \code{\link{automata_select}},
+  \code{\link{smooth_select}},
   \code{\link{timeframe_select}}
 }
 

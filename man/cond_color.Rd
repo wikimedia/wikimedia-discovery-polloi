@@ -18,7 +18,7 @@ select a colour based on the true/false nature of a condition.
 Uses green as the "true" colour by default, "red" as false, and
 }
 \seealso{
-Other Shiny Dashboarding: \code{\link{check_notify}},
+Other Shiny.Dashboarding: \code{\link{check_notify}},
   \code{\link{cond_icon}}, \code{\link{time_frame_range}}
 }
 

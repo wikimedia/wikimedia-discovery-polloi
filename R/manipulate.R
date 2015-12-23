@@ -1,16 +1,11 @@
 #'@title Safely retrieve the last N values from an object
-#'
 #'@description using tail() to get the last sequential values in an object relies
 #'on that object being ordered, which it sometimes isn't due to backfilling. \code{safe_tail}
 #'retrieves the last N values in a "safe" way, taking the possibility of unordered data into
 #'account.
-#'
 #'@param x an object to tail
-#'
 #'@param n the number of values to take
-#'
 #'@param silent whether to produce warnings and messages or not. TRUE by default.
-#'
 #'@export
 safe_tail <- function(x, n, silent = TRUE) {
   if (!is.vector(x) && !is.data.frame(x)) {
@@ -37,12 +32,9 @@ safe_tail <- function(x, n, silent = TRUE) {
 
 #'@title Sample Half an Object
 #'@description easily sample the top or bottom half of an object.
-#'
 #'@param x the object to sample from
-#'
 #'@param top whether it should be the top (TRUE) or bottom (FALSE) half.
 #'Set to TRUE by default.
-#'
 #'@export
 half <- function(x, top = TRUE){
   if(top){

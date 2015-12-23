@@ -4,9 +4,17 @@
 #'@family inputs
 #'@export
 smooth_select <- function(input_id, label = "Smoothing") {
-  return(selectInput(inputId = input_id, label = label, selectize = TRUE,
+  return(shiny::selectInput(inputId = input_id, label = label, selectize = TRUE,
                      selected = "global", choices = c("Use Global Setting" = "global",
                                                       "No Smoothing" = "day", "Weekly Median" = "week", "Monthly Median" = "month")))
+}
+#'@title Standardised Input Selector for Automata Filtering
+#'@param input_id ID
+#'@param label Label
+#'@family inputs
+#'@export
+automata_select <- function(input_id, label = "Include automata (e.g. web crawlers)") {
+  return(shiny::checkboxInput(input_id, label = label, value = TRUE))
 }
 #'@title Standardized Drop-down Selector for Time Frame
 #'@param input_id ID
@@ -16,10 +24,10 @@ smooth_select <- function(input_id, label = "Smoothing") {
 #'@seealso timeframe_daterange "Shiny Dashboarding"
 #'@export
 timeframe_select <- function(input_id, label = "Time Frame") {
-  return(selectInput(inputId = input_id, label = label, selectize = TRUE, selected = "global",
-                     choices = c("Use Global Setting" = "global", "All available data" = "all",
-                                 "Last 7 days" = "week", "Last 30 days" = "month",
-                                 "Last 90 days" = "quarter", "Custom" = "custom")))
+  return(shiny::selectInput(inputId = input_id, label = label, selectize = TRUE, selected = "global",
+                            choices = c("Use Global Setting" = "global", "All available data" = "all",
+                                        "Last 7 days" = "week", "Last 30 days" = "month",
+                                        "Last 90 days" = "quarter", "Custom" = "custom")))
 }
 #'@title Standardized Date Range Selector for Time Frame
 #'@param select_input_id The ID you used for the corresponding
@@ -30,9 +38,9 @@ timeframe_select <- function(input_id, label = "Time Frame") {
 #'@seealso timeframe_select
 #'@export
 timeframe_daterange <- function(select_input_id, label = "Custom Date Range") {
-  return(conditionalPanel(paste0("input.", select_input_id," == 'custom'"),
-                          dateRangeInput(paste(select_input_id, "daterange", sep = "_"), label = label,
-                                         start = Sys.Date()-11, end = Sys.Date()-1, min = "2015-04-14")))
+  return(shiny::conditionalPanel(paste0("input.", select_input_id," == 'custom'"),
+                                 shiny::dateRangeInput(paste(select_input_id, "daterange", sep = "_"), label = label,
+                                                       start = Sys.Date()-11, end = Sys.Date()-1, min = "2015-04-14")))
 }
 
 #'@title Get The Time Range
