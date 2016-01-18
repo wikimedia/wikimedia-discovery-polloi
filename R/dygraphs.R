@@ -49,7 +49,7 @@ make_dygraph <- function(data, xlab, ylab, title,
            dyLegend(width = 400, show = "always") %>%
            dyOptions(strokeWidth = 3,
                      # Dynamically switch to 3rd color scheme if number of categories exceeds 8
-                     colors = brewer.pal(max(3, ncol(data)), c("Set2", "Set3")[which.max(8, ncol(data))]),
+                     colors = brewer.pal(max(c(3, ncol(data))), c("Set2", "Set3")[which.max(c(8, ncol(data)))]),
                      drawPoints = FALSE, pointSize = 3, labelsKMB = use_si,
                      includeZero = TRUE, ...) %>%
            dyCSS(css = system.file("custom.css", package = "polloi")))
