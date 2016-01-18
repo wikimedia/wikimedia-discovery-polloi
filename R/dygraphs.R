@@ -32,8 +32,13 @@ make_dygraph <- function(data, xlab, ylab, title,
   # Make sure we're not dealing with tbl_df or data.table nonsense
   class(data) <- "data.frame"
 
+  # If something has gone really awry and we get a <NA> as a date, xts will return an error:
+  #   "Error in xts::periodicity(data) : can not calculate periodicity of 1 observation"
+  #   So let's sanitize before we run xts.
+  data <- data[!is.na(data[[1]]), ]
+
   # If we've only got a single variable reformatting into an XTS looks weird, but otherwise we're
-  # all cool.
+  #   all cool.
   if (ncol(data) == 2) {
     if (is.null(legend_name)) {
       legend_name <- names(data)[2]
@@ -44,7 +49,7 @@ make_dygraph <- function(data, xlab, ylab, title,
     data <- xts::xts(data[,-1], order.by = data[[1]])
   }
 
-  # Construct and return the dygraph
+  # Construct and return the dygraph.
   return(dygraph(data, main = title, xlab = xlab, ylab = ylab, group = group) %>%
            dyLegend(width = 400, show = "always") %>%
            dyOptions(strokeWidth = 3,

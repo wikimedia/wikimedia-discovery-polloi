@@ -83,3 +83,15 @@ time_frame_range <- function(input_local_timeframe,
                 quarter = c(Sys.Date()-91, Sys.Date()-1),
                 custom = input_local_daterange))
 }
+
+#'@title Bad Data Value Box
+#'@description This is used in cases where something has gone wrong with the
+#'  data and a value could not be calculated. This ensures the "bad data" value
+#'  boxes have a consistent look.
+#'@param subtitle Subtitle text.
+#'@family Shiny Dashboarding
+#'@importFrom shinydashboard valueBox
+#'@export
+na_box <- function(subtitle) {
+  return(valueBox(subtitle = subtitle, value = "NA", color = "red", icon = icon("warning")))
+}

@@ -21,7 +21,8 @@ Check a dataset for missing data from the day before and the
  detected.
 }
 \seealso{
-Other Shiny.Dashboarding: \code{\link{cond_color}},
-  \code{\link{cond_icon}}, \code{\link{time_frame_range}}
+Other Shiny Dashboarding: \code{\link{cond_color}},
+  \code{\link{cond_icon}}, \code{\link{na_box}},
+  \code{\link{time_frame_range}}
 }
 

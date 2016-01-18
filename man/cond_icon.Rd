@@ -17,7 +17,8 @@ allows you to select an appropriate directional icon for a
  change in condition.
 }
 \seealso{
-Other Shiny.Dashboarding: \code{\link{check_notify}},
-  \code{\link{cond_color}}, \code{\link{time_frame_range}}
+Other Shiny Dashboarding: \code{\link{check_notify}},
+  \code{\link{cond_color}}, \code{\link{na_box}},
+  \code{\link{time_frame_range}}
 }
 
