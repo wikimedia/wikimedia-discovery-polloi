@@ -1,3 +1,9 @@
+polloi 0.0.8
+============
+- Now intelligently chooses which color scheme to use
+  based on the number of variables in the dygraph.
+- Sanitizes data before passing it through xts::xts().
+
 polloi 0.0.7
 ============
 - Added function for checking dataset for missing

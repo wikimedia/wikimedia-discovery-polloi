@@ -54,7 +54,7 @@ make_dygraph <- function(data, xlab, ylab, title,
            dyLegend(width = 400, show = "always") %>%
            dyOptions(strokeWidth = 3,
                      # Dynamically switch to 3rd color scheme if number of categories exceeds 8
-                     colors = brewer.pal(max(c(3, ncol(data))), c("Set2", "Set3")[which.max(c(8, ncol(data)))]),
+                     colors = brewer.pal(max(c(3, ncol(data))), c("Set1", "Paired")[which.max(c(5, ncol(data)))]),
                      drawPoints = FALSE, pointSize = 3, labelsKMB = use_si,
                      includeZero = TRUE, ...) %>%
            dyCSS(css = system.file("custom.css", package = "polloi")))
@@ -115,5 +115,5 @@ weekday[3] = "Wednesday";
 weekday[4] = "Thursday";
 weekday[5] = "Friday";
 weekday[6] = "Saturday";
-return weekday[d.getDay()] + " (" + (d.getMonth()+1) + "/" + d.getDate() + ")";
+return weekday[d.getDay()] + "<br>(" + (d.getMonth()+1) + "/" + d.getDate() + ")";
 }'
