@@ -1,0 +1,62 @@
+wikiid,project,multilingual,language
+mediawikiwiki,MediaWiki,FALSE,
+wikimedia,Wikimedia Chapter,TRUE,
+foundationwiki,Wikimedia Foundation wiki,FALSE,
+officewiki,Office wiki,FALSE,
+boardwiki,Board wiki,FALSE,
+chapcomwiki,Chapters Committee,FALSE,
+grantswiki,Grants wiki,FALSE,
+metawiki,Meta wiki,FALSE,
+dotewiki,Dotion Site,FALSE,
+collabwiki,Collaboration wiki,FALSE,
+commonswiki,Wikimedia Commons,FALSE,
+specieswiki,Wikispecies,FALSE,
+labswiki,Wikitech,FALSE,
+labtestwiki,Wikitech Test,FALSE,
+wikidatawiki,Wikidata,FALSE,
+testwikidatawiki,Wikidata Test,FALSE,
+testwiki,Test Wikipedia,FALSE,
+test2wiki,Test Wikipedia,FALSE,
+incubatorwiki,Incubator for new wikis,FALSE,
+betawikiversity,Incubator for Wikiversities,FALSE,
+nostalgiawiki,Historic wiki,FALSE,
+checkuserwiki,Check user wiki,FALSE,
+wiki,Wikipedia,TRUE,
+wiktionary,Wiktiory,TRUE,
+wikibooks,Wikibooks,TRUE,
+wikiquote,Wikiquote,TRUE,
+wikisource,Wikisource,TRUE,
+wikinews,Wikinews,TRUE,
+wikiversity,Wikiversity,TRUE,
+wikivoyage,Wikivoyage,TRUE,
+wikimaniateamwiki,Wikimania Team,FALSE,
+wikimania2006wiki, Wikimania 2006,FALSE,
+wikimania2007wiki, Wikimania 2007,FALSE,
+wikimania2008wiki, Wikimania 2008,FALSE,
+wikimania2010wiki, Wikimania 2010,FALSE,
+wikimania2012wiki, Wikimania 2012,FALSE,
+wikimania2014wiki, Wikimania 2014,FALSE,
+wikimania2015wiki, Wikimania 2015,FALSE,
+wikimania2016wiki, Wikimania 2016,FALSE,
+wikimania2017wiki, Wikimania 2017,FALSE,
+tenwiki,10th Anniversary of Wikipedia,FALSE,
+zerowiki,Zero wiki,FALSE,
+uawikimedia,Wikimedia Chapter,FALSE,Ukrainian
+dkwikimedia,Wikimedia Chapter,FALSE,Danish
+nzwikimedia,Wikimedia Chapter,FALSE,English (New Zealand)
+rswikimedia,Wikimedia Chapter,FALSE,Serbian
+mxwikimedia,Wikimedia Chapter,FALSE,Spanish (Mexico)
+otrs_wikiwiki,Wikimedia OTRS system,FALSE,
+legalteamwiki,Legal Team wiki,FALSE,
+loginwiki,Login wiki,FALSE,
+usabilitywiki,Usability wiki,FALSE,
+votewiki,Vote wiki,FALSE,
+strategywiki,Strategy wiki,FALSE,
+sourceswiki,Sources wiki,FALSE,
+outreachwiki,Wikimedia Outreach,FALSE,
+arbcom_enwiki,Arbitration Committee wiki,FALSE,English
+arbcom_dewiki,Arbitration Committee wiki,FALSE,German
+arbcom_nlwiki,Arbitration Committee wiki,FALSE,Dutch
+arbcom_frwiki,Arbitration Committee wiki,FALSE,French
+arbcom_kowiki,Arbitration Committee wiki,FALSE,Korean
+stewardwiki,Steward,FALSE,

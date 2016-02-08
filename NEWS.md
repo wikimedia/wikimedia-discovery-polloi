@@ -1,3 +1,8 @@
+polloi 0.0.9
+============
+- Adds methods for converting wikiid to a language-
+  project tuple.
+
 polloi 0.0.8
 ============
 - Now intelligently chooses which color scheme to use
