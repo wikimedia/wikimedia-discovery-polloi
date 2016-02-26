@@ -1,14 +1,13 @@
 Common Files and Functions
 ========================
 
-This repository contains files and functions used by all the [Discovery Dashboards](http://searchdata.wmflabs.org/) projects.
+This repository contains files and functions used by all the [Discovery Dashboards](http://discovery.wmflabs.org/) projects.
 
 ## Installation
 
-```
-$ R
-R> install.packages('devtools')
-R> devtools::install_git('https://gerrit.wikimedia.org/r/wikimedia/discovery/polloi')
+```R
+# install.packages('devtools')
+devtools::install_git('https://gerrit.wikimedia.org/r/wikimedia/discovery/polloi')
 ```
 
 ## Additional Information

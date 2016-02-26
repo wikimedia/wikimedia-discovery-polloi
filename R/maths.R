@@ -1,14 +1,3 @@
-#'@title Median Absolute Deviation
-#'@description computes the Median Absolute Deviation, or MAD. It's like standard deviations
-#'only it doesn't suck terribly for any dataset we'd actually encounter outside a classroom.
-#'
-#'@param x a numeric vector
-#'
-#'@export
-mad <- function(x){
-  median(abs(x - median(x)))
-}
-
 #'@title Calculate a Percentage Change
 #'
 #'@description calculates a delta between X or Y (or sequential X values)
