@@ -18,13 +18,14 @@ smooth_switch <- function(global, local){
 #' @description Takes an untidy (read: dygraph-appropriate) dataset and adds
 #' columns for each variable consisting of the smoothed, averaged mean.
 #' @param dataset an untidy, dygraph-appropriate data.frame
-#' @param smooth_level the level of smoothing. Options are "day", "moving_avg",
-#' "week" and "month".
+#' @param smooth_level the level of smoothing. Options are "day", "week",
+#'   "month", and "gam"
 #' @param rename whether to rename the fields once smoothed. TRUE by default.
 #' @export
 #' @importFrom plyr ddply
 #' @importFrom lubridate week year month
 #' @importFrom zoo rollmean
+#' @importFrom mgcv gam s predict.gam
 smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
   # Determine the names and levels of aggregation. By default
   # a smoothing level of "day" is assumed, which is no smoothing
@@ -39,6 +40,22 @@ smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
            dataset$filter_1 <- lubridate::month(dataset[[1]])
            dataset$filter_2 <- lubridate::year(dataset[[1]])
            name_append <- ifelse(rename, " (Monthly average)", "")
+         },
+         gam = {
+           smoothed <- as.data.frame(do.call(cbind,
+             lapply(dataset[, -1, drop = FALSE], function(var_to_smooth) {
+               return(tryCatch({
+                 fit <- mgcv::gam(y ~ s(x, k = 14),
+                            data = data.frame(x = as.numeric(dataset$date),
+                                              y = var_to_smooth,
+                                              stringsAsFactors = FALSE))
+                 unname(mgcv::predict.gam(fit,
+                   newdata = data.frame(x = as.numeric(dataset$date))))
+               }, error = function(e) {
+                 return(NA)
+               }))
+             })))
+           return(cbind(date = dataset$date, smoothed))
          },
          {
            return(dataset)

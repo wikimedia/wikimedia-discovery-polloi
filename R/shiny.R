@@ -6,7 +6,10 @@
 smooth_select <- function(input_id, label = "Smoothing") {
   return(shiny::selectInput(inputId = input_id, label = label, selectize = TRUE,
                      selected = "global", choices = c("Use Global Setting" = "global",
-                                                      "No Smoothing" = "day", "Weekly Median" = "week", "Monthly Median" = "month")))
+                                                      "No Smoothing" = "day",
+                                                      "Weekly Median" = "week",
+                                                      "Monthly Median" = "month",
+                                                      "Splines" = "gam")))
 }
 #'@title Standardised Input Selector for Automata Filtering
 #'@param input_id ID

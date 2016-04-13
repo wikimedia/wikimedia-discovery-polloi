@@ -9,8 +9,8 @@ smoother(dataset, smooth_level = "day", rename = TRUE)
 \arguments{
 \item{dataset}{an untidy, dygraph-appropriate data.frame}
 
-\item{smooth_level}{the level of smoothing. Options are "day", "moving_avg",
-"week" and "month".}
+\item{smooth_level}{the level of smoothing. Options are "day", "week",
+"month", and "gam"}
 
 \item{rename}{whether to rename the fields once smoothed. TRUE by default.}
 }

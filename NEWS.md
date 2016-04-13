@@ -1,3 +1,8 @@
+polloi 0.1.2
+- Downloads datasets over https now.
+- Added spline smoothing with generalized additive
+  models. See ?mgcv::gam for more info.
+
 polloi 0.0.9
 ============
 - Adds methods for converting wikiid to a language-
