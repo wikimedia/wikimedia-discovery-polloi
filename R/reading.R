@@ -8,7 +8,7 @@
 #'@importFrom readr read_delim
 #'@export
 read_dataset <- function(path, ...){
-  location <- paste0("http://datasets.wikimedia.org/aggregate-datasets/", path,
+  location <- paste0("https://datasets.wikimedia.org/aggregate-datasets/", path,
                      "?ts=", gsub(x = Sys.time(), pattern = "(-| )", replacement = ""))
   con <- url(location)
   return(readr::read_delim(con, delim = "\t", ...))
