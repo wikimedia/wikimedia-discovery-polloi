@@ -1,4 +1,11 @@
+polloi 0.1.3
+============
+- Now includes a de-duplication step after reading
+  data to avoid spikes. Will issue warnings when
+  it has detected duplicates.
+
 polloi 0.1.2
+============
 - Downloads datasets over https now.
 - Added spline smoothing with generalized additive
   models. See ?mgcv::gam for more info.

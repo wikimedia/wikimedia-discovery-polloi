@@ -11,5 +11,10 @@ read_dataset <- function(path, ...){
   location <- paste0("https://datasets.wikimedia.org/aggregate-datasets/", path,
                      "?ts=", gsub(x = Sys.time(), pattern = "(-| )", replacement = ""))
   con <- url(location)
-  return(readr::read_delim(con, delim = "\t", ...))
+  data <- read_delim(con, delim = "\t", ...)
+  # De-duplicate & return:
+  dupes <- duplicated(data)
+  dupe_dates <- paste(unique(as.character(data[dupes, ][[1]], format = "%Y-%m-%d")), collapse = ", ")
+  warning("Duplicated data detected in '", path, "' for the following dates: ", dupe_dates)
+  return(data[!dupes, ])
 }

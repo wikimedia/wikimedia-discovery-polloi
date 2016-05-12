@@ -1,8 +1,8 @@
 Package: polloi
 Type: Package
 Title: Common Functionality for Wikimedia Dashboards
-Version: 0.1.2
-Date: 2016-04-13
+Version: 0.1.3
+Date: 2016-05-12
 Authors@R: c(
     person("Oliver", "Keyes", , "okeyes@wikimedia.org", role = "aut"),
     person("Mikhail", "Popov", , "mpopov@wikimedia.org", role = c("aut", "cre"))
