@@ -55,7 +55,7 @@ smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
                  return(NA)
                }))
              })))
-           return(cbind(date = dataset$date, smoothed))
+           return(cbind(date = dataset$date, smoothed + (1 * is.na(dataset[, -1])) * dataset[, -1]))
          },
          {
            return(dataset)
