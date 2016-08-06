@@ -1,3 +1,7 @@
+polloi 0.1.4
+============
+- Updated Wikipedia prefix fetching.
+
 polloi 0.1.3
 ============
 - Now includes a de-duplication step after reading

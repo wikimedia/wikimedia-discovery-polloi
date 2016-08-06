@@ -8,7 +8,7 @@ update_prefixes()
 }
 \description{
 Scrapes the table off
- \url{https://meta.wikimedia.org/wiki/Table_of_Wikimedia_projects} and stores the first
+ \url{https://en.wikipedia.org/wiki/List_of_Wikipedias} and stores the first
  three columns containing the language, local language, and the prefix code.
 }
 

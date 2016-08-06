@@ -1,6 +1,6 @@
 #'@title Update internal index of language prefixes.
 #'@description Scrapes the table off
-#'  \url{https://meta.wikimedia.org/wiki/Table_of_Wikimedia_projects} and stores the first
+#'  \url{https://en.wikipedia.org/wiki/List_of_Wikipedias} and stores the first
 #'  three columns containing the language, local language, and the prefix code.
 #'@importFrom magrittr "%>%" set_names
 #'@importFrom xml2 read_html
@@ -14,17 +14,17 @@ update_prefixes <- function() {
 
   file_location <- system.file("extdata/prefixes.csv", package = "polloi")
 
-  prefixes <- read_html("https://meta.wikimedia.org/wiki/Table_of_Wikimedia_projects#Projects_per_language_codes") %>%
+  prefixes <- read_html("https://en.wikipedia.org/wiki/List_of_Wikipedias") %>%
     html_nodes(".wikitable") %>%
-    { .[[1]] } %>%
+    { .[[3]] } %>%
     html_table() %>%
-    { .[, c('English Name', 'Local Name', 'Language Code')] } %>%
+    { .[, c('Language', 'Language (local)', 'Wiki')] } %>%
     set_names(c('language', 'local', 'prefix'))
-  prefixes$prefix <- sub(":", "", prefixes$prefix)
-  prefixes$prefix <- gsub("-", "_", prefixes$prefix)
-  prefixes$language <- sub("Template:Eln ", "", prefixes$language)
+
+  prefixes <- prefixes[order(prefixes$language), ]
 
   readr::write_csv(prefixes, file_location)
+  # file.copy(from = file_location, to = "inst/extdata/prefixes.csv", overwrite = TRUE)
   return(invisible())
 }
 
@@ -57,6 +57,7 @@ update_projects <- function() {
 #'@export
 parse_wikiid <- function(x) {
   temp <- get_langproj()
+  temp$wikiid <- sub("-", "_", temp$wikiid)
   result <- left_join(data.frame(wikiid = x, stringsAsFactors = FALSE), temp, by = "wikiid")
   return(result[, c('language', 'project')])
 }
