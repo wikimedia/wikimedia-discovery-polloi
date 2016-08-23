@@ -1,3 +1,9 @@
+polloi 0.1.5
+============
+- Added intelligent color palettes.
+- Added [Chelsy Xie](https://meta.wikimedia.org/wiki/User:CXie_(WMF)) as a contact.
+- Removed [Oliver Keyes](https://meta.wikimedia.org/wiki/User:Okeyes_(WMF)) as a contact.
+
 polloi 0.1.4
 ============
 - Updated Wikipedia prefix fetching.

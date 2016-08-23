@@ -1,3 +1,25 @@
+#'@title Intelligently choose the correct color palette
+#'@description Picks between 3 different color palettes based on number of
+#'  categories to visualize. For <13 categories, uses Set1, Paired, & Set3
+#'  from RColorBrewer. For More than 12 categories, builds a HCL color
+#'  space-based palette.
+#'@param n Number of colors to return (number of categories).
+#'@return A character vector of \code{n} colors.
+#'@importFrom RColorBrewer brewer.pal
+#'@importFrom colorspace rainbow_hcl
+#'@export
+smart_palette <- function(n) {
+  if (n <= 9) {
+    return(brewer.pal(max(3, n), "Set1"))
+  } else if (n == 10) {
+    return(brewer.pal(10, "Paired"))
+  } else if (n <= 12) {
+    return(brewer.pal(n, "Set3"))
+  } else {
+    return(rainbow_hcl(n))
+  }
+}
+
 #'@title Construct a Standard Wikimedia Discovery Dygraph
 #'@description Construct a dygraph using the custom formatting Wikimedia
 #'  dashboards use as standard. This is nothing special - a standard dygraph
@@ -52,9 +74,7 @@ make_dygraph <- function(data, xlab, ylab, title,
   # Construct and return the dygraph.
   return(dygraph(data, main = title, xlab = xlab, ylab = ylab, group = group) %>%
            dyLegend(width = 400, show = "always") %>%
-           dyOptions(strokeWidth = 3,
-                     # Dynamically switch to 3rd color scheme if number of categories exceeds 8
-                     colors = brewer.pal(max(c(3, ncol(data))), c("Set1", "Paired")[which.max(c(5, ncol(data)))]),
+           dyOptions(strokeWidth = 3, colors = smart_palette(ncol(data)),
                      drawPoints = FALSE, pointSize = 3, labelsKMB = use_si,
                      includeZero = TRUE, ...) %>%
            dyCSS(css = system.file("custom.css", package = "polloi")))

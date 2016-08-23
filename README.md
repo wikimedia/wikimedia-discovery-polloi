@@ -7,7 +7,7 @@ This repository contains files and functions used by all the [Discovery Dashboar
 
 ```R
 # install.packages('devtools')
-devtools::install_git('https://gerrit.wikimedia.org/r/wikimedia/discovery/polloi')
+devtools::install_github('wikimedia/wikimedia-discovery-polloi')
 ```
 
 ## Additional Information
@@ -16,5 +16,5 @@ Please note that this project is released with a [Contributor Code of Conduct](C
 
 ### Contacts
 
-- [Oliver Keyes](https://meta.wikimedia.org/wiki/User:Okeyes_(WMF))
 - [Mikhail Popov](https://meta.wikimedia.org/wiki/User:MPopov_(WMF))
+- [Chelsy Xie](https://meta.wikimedia.org/wiki/User:CXie_(WMF))
