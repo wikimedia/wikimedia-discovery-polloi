@@ -9,12 +9,26 @@
 #'@importFrom colorspace rainbow_hcl
 #'@export
 smart_palette <- function(n) {
-  if (n <= 9) {
+  if (n < 6) {
     return(brewer.pal(max(3, n), "Set1"))
-  } else if (n == 10) {
-    return(brewer.pal(10, "Paired"))
-  } else if (n <= 12) {
-    return(brewer.pal(n, "Set3"))
+  } else if (n < 9) {
+    return(brewer.pal(n + 1, "Set1")[-6])
+  } else if (n <= 10) {
+    return(c("#00b769", "#d354be", "#436a00", "#0047a7", "#ffac3e", "#00dfe0", "#e5356f", "#01845d", "#ff8c80", "#ad5700")[1:n])
+    # ^ made with http://tools.medialab.sciences-po.fr/iwanthue/
+    # Settings:
+    # - Color space is 'colorblind friendly'
+    # - 10 colors
+    # - hard (force vector) instead of k-means
+  } else if (n == 11) {
+    return(brewer.pal(12, "Paired")[-11])
+  } else if (n <= 14) {
+    return(c("#cd9c2e", "#b3467d", "#91b23e", "#6c81d9", "#45c097", "#5d398b", "#568435", "#ca75c7", "#c67b3a", "#9e3d45", "#64c471", "#d34b65", "#aa9747", "#bd523b")[1:n])
+    # ^ made with http://tools.medialab.sciences-po.fr/iwanthue/
+    # Settings:
+    # - Color space is 'colorblind friendly'
+    # - 14 colors
+    # - soft (k-means)
   } else {
     return(rainbow_hcl(n))
   }

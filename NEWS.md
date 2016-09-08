@@ -1,3 +1,7 @@
+polloi 0.1.6
+============
+- Improved color palette.
+
 polloi 0.1.5
 ============
 - Added intelligent color palettes.
