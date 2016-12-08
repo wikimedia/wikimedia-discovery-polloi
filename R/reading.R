@@ -14,7 +14,9 @@ read_dataset <- function(path, ...){
   data <- read_delim(con, delim = "\t", ...)
   # De-duplicate & return:
   dupes <- duplicated(data)
-  dupe_dates <- paste(unique(as.character(data[dupes, ][[1]], format = "%Y-%m-%d")), collapse = ", ")
-  warning("Duplicated data detected in '", path, "' for the following dates: ", dupe_dates)
+  if (any(dupes)) {
+    dupe_dates <- paste(unique(as.character(data[dupes, ][[1]], format = "%Y-%m-%d")), collapse = ", ")
+    warning("Duplicated data detected in '", path, "' for the following dates: ", dupe_dates)
+  }
   return(data[!dupes, ])
 }
