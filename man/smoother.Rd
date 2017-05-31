@@ -18,4 +18,3 @@ smoother(dataset, smooth_level = "day", rename = TRUE)
 Takes an untidy (read: dygraph-appropriate) dataset and adds
 columns for each variable consisting of the smoothed, averaged mean.
 }
-

@@ -1,12 +1,12 @@
-#'@title Update internal index of language prefixes.
-#'@description Scrapes the table off
-#'  \url{https://en.wikipedia.org/wiki/List_of_Wikipedias} and stores the first
-#'  three columns containing the language, local language, and the prefix code.
-#'@importFrom magrittr "%>%" set_names
-#'@importFrom xml2 read_html
-#'@importFrom rvest html_nodes html_table
-#'@importFrom readr write_csv
-#'@export
+#' @title Update internal index of language prefixes.
+#' @description Scrapes the table off
+#'   \url{https://en.wikipedia.org/wiki/List_of_Wikipedias} and stores the first
+#'   three columns containing the language, local language, and the prefix code.
+#' @importFrom magrittr "%>%" set_names
+#' @importFrom xml2 read_html
+#' @importFrom rvest html_nodes html_table
+#' @importFrom readr write_csv
+#' @export
 update_prefixes <- function() {
   if (!requireNamespace("rvest", quietly = TRUE) && !requireNamespace("xml2", quietly = TRUE)) {
     stop("Requires rvest and xml2 packages to be installed.")

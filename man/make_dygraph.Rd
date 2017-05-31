@@ -8,7 +8,7 @@ make_dygraph(data, xlab, ylab, title, legend_name = NULL, use_si = TRUE,
   expr = NULL, group = NULL, ...)
 }
 \arguments{
-\item{data}{a data.frame reformatted to be XTS-able.}
+\item{data}{a \code{data.frame} reformatted to be XTS-able.}
 
 \item{xlab}{the label to use for the dygraph's x-axis.}
 
@@ -28,13 +28,12 @@ We use this in (for example) reactive graphing.}
 \item{group}{Group to associate this plot with. The x-axis zoom level of
 plots within a group is automatically synchronized.}
 
-\item{...}{Additional parameters to pass on to \code{dyOptions}.}
+\item{...}{Additional parameters to pass on to \link[dygraphs:dyOptions]{dygraphs::dyOptions}.}
 }
 \description{
 Construct a dygraph using the custom formatting Wikimedia
- dashboards use as standard. This is nothing special - a standard dygraph
- with a bit of custom CSS shipped with the package - but it's surrounded by
- code that allows the function to turn all our usual data.frame formats
- into XTS objects.
+dashboards use as standard. This is nothing special - a standard dygraph
+with a bit of custom CSS shipped with the package - but it's surrounded by
+code that allows the function to turn all our usual \code{data.frame} formats
+into \link[xts:xts]{xts::xts} objects.
 }
-

@@ -4,7 +4,7 @@
 #'  from RColorBrewer. For More than 12 categories, builds a HCL color
 #'  space-based palette.
 #'@param n Number of colors to return (number of categories).
-#'@return A character vector of \code{n} colors.
+#'@return A character vector of `n` colors.
 #'@importFrom RColorBrewer brewer.pal
 #'@importFrom colorspace rainbow_hcl
 #'@export
@@ -34,30 +34,30 @@ smart_palette <- function(n) {
   }
 }
 
-#'@title Construct a Standard Wikimedia Discovery Dygraph
-#'@description Construct a dygraph using the custom formatting Wikimedia
-#'  dashboards use as standard. This is nothing special - a standard dygraph
-#'  with a bit of custom CSS shipped with the package - but it's surrounded by
-#'  code that allows the function to turn all our usual data.frame formats
-#'  into XTS objects.
-#'@param data a data.frame reformatted to be XTS-able.
-#'@param xlab the label to use for the dygraph's x-axis.
-#'@param ylab the label to use for the dygraph's y-axis.
-#'@param title the title to use on the dygraph.
-#'@param legend_name a custom name for the variable in the event that
-#'  \code{is_single} is TRUE. NULL by default (in which case the variable
-#'  will be named "events").
-#'@param use_si whether to use si labelling (1000 becomes 1K). TRUE by default.
-#'@param expr an optional expression to evaluate prior to building the dygraph.
-#'  We use this in (for example) reactive graphing.
-#'@param group Group to associate this plot with. The x-axis zoom level of
-#'  plots within a group is automatically synchronized.
-#'@param ... Additional parameters to pass on to \code{dyOptions}.
-#'@importFrom dygraphs renderDygraph dyCSS dyOptions dyLegend dygraph
-#'@importFrom xts xts
-#'@importFrom RColorBrewer brewer.pal
-#'@importFrom magrittr "%>%"
-#'@export
+#' @title Construct a Standard Wikimedia Discovery Dygraph
+#' @description Construct a dygraph using the custom formatting Wikimedia
+#'   dashboards use as standard. This is nothing special - a standard dygraph
+#'   with a bit of custom CSS shipped with the package - but it's surrounded by
+#'   code that allows the function to turn all our usual `data.frame` formats
+#'   into [xts::xts] objects.
+#' @param data a `data.frame` reformatted to be XTS-able.
+#' @param xlab the label to use for the dygraph's x-axis.
+#' @param ylab the label to use for the dygraph's y-axis.
+#' @param title the title to use on the dygraph.
+#' @param legend_name a custom name for the variable in the event that
+#'   `is_single` is TRUE. NULL by default (in which case the variable
+#'   will be named "events").
+#' @param use_si whether to use si labelling (1000 becomes 1K). TRUE by default.
+#' @param expr an optional expression to evaluate prior to building the dygraph.
+#'   We use this in (for example) reactive graphing.
+#' @param group Group to associate this plot with. The x-axis zoom level of
+#'   plots within a group is automatically synchronized.
+#' @param ... Additional parameters to pass on to [dygraphs::dyOptions].
+#' @importFrom dygraphs renderDygraph dyCSS dyOptions dyLegend dygraph
+#' @importFrom xts xts
+#' @importFrom RColorBrewer brewer.pal
+#' @importFrom magrittr "%>%"
+#' @export
 make_dygraph <- function(data, xlab, ylab, title,
                          legend_name = NULL, use_si = TRUE, expr = NULL,
                          group = NULL, ...) {
@@ -94,15 +94,15 @@ make_dygraph <- function(data, xlab, ylab, title,
            dyCSS(css = system.file("custom.css", package = "polloi")))
 }
 
-#'@title Select a Colour Conditionally
-#'@description select a colour based on the true/false nature of a condition.
-#'Uses green as the "true" colour by default, "red" as false, and
-#'@param condition a condition to be evaluated to produce a single TRUE or
-#'  FALSE value.
-#'@param true_color the colour used to represent a TRUE result. Green by
-#'  default.
-#'@family Shiny Dashboarding
-#'@export
+#' @title Select a Colour Conditionally
+#' @description select a colour based on the true/false nature of a condition.
+#'   Uses green as the "true" colour by default, "red" as false, and
+#' @param condition a condition to be evaluated to produce a single TRUE or
+#'   FALSE value.
+#' @param true_color the colour used to represent a TRUE result. Green by
+#'   default.
+#' @family Shiny Dashboarding
+#' @export
 cond_color <- function(condition, true_color = "green") {
   if (is.na(condition)) {
     return("black")
@@ -112,15 +112,15 @@ cond_color <- function(condition, true_color = "green") {
   return(ifelse(condition, true_color, colours[!colours == true_color]))
 }
 
-#'@title Select an appropriate directional icon
-#'@description allows you to select an appropriate directional icon for a
-#'  change in condition.
-#'@param condition a condition to be evaluated to produce a single TRUE/FALSE
-#'@param true_direction which direction represents a positive change. "up" by
-#'default.
-#'@family Shiny Dashboarding
-#'@importFrom shiny icon
-#'@export
+#' @title Select an appropriate directional icon
+#' @description allows you to select an appropriate directional icon for a
+#'   change in condition.
+#' @param condition a condition to be evaluated to produce a single TRUE/FALSE
+#' @param true_direction which direction represents a positive change. "up" by
+#'   default.
+#' @family Shiny Dashboarding
+#' @importFrom shiny icon
+#' @export
 cond_icon <- function(condition, true_direction = "up") {
 
   if (true_direction == "up") {

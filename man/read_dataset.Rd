@@ -4,15 +4,17 @@
 \alias{read_dataset}
 \title{Read Datasets from datasets.wikimedia}
 \usage{
-read_dataset(path, ...)
+read_dataset(path, force_uncached = TRUE, ...)
 }
 \arguments{
-\item{path}{the path to the file, starting from datasets.wikimedia.org/aggregate-datasets/}
+\item{path}{the path to the file, starting from https://analytics.wikimedia.org/datasets/}
 
-\item{...}{Additional arguments to be passed to \code{readr::read_delim}}
+\item{force_uncached}{If TRUE, appends a \code{?ts=...} to URL to force an uncached version}
+
+\item{...}{Additional arguments to be passed to \link[readr:read_delim]{readr::read_delim}}
 }
 \description{
 Grabs datasets from the public directories at
-\href{https://datasets.wikimedia.org}{datasets.wikimedia.org} for use in dashboarding.
+\href{https://analytics.wikimedia.org/datasets/}{WMF Analytics' Datasets} for
+use in dashboarding.
 }
-

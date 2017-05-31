@@ -14,6 +14,5 @@ A data frame with columns 'language' and 'project'.
 }
 \description{
 Uses the internal index of languages, prefixes, wikis, and
- projects to parse a wikiid into a language-project tuple.
+projects to parse a wikiid into a language-project tuple.
 }
-

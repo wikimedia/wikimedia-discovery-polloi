@@ -5,10 +5,10 @@
 \title{Wikimedia Projects}
 \format{A data frame with 280-some rows and 3 variables:
 \describe{
-  \item{wikiid}{The wiki ID used internally.}
-  \item{project}{Name of the Wikimedia project.}
-  \item{multilingual}{A boolean indicator whether the project has language
-    subdomains.}
+\item{wikiid}{The wiki ID used internally.}
+\item{project}{Name of the Wikimedia project.}
+\item{multilingual}{A boolean indicator whether the project has language
+subdomains.}
 }}
 \source{
 \url{https://meta.wikimedia.org/wiki/Table_of_Wikimedia_projects}
@@ -18,9 +18,8 @@ get_projects()
 }
 \description{
 Returns a dataset containing almost 40 Wikimedia Foundation
-  projects.
+projects.
 }
 \seealso{
-\code{\link{update_projects}}, \code{\link{get_prefixes}}, \code{\link{get_langproj}}
+\link{update_projects}, \link{get_prefixes}, \link{get_langproj}
 }
-

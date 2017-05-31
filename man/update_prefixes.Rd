@@ -8,7 +8,6 @@ update_prefixes()
 }
 \description{
 Scrapes the table off
- \url{https://en.wikipedia.org/wiki/List_of_Wikipedias} and stores the first
- three columns containing the language, local language, and the prefix code.
+\url{https://en.wikipedia.org/wiki/List_of_Wikipedias} and stores the first
+three columns containing the language, local language, and the prefix code.
 }
-

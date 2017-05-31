@@ -1,17 +1,17 @@
-#'@title Check 'n' Notify
-#'@description Check a dataset for missing data from the day before and the
-#'  past week, and create a \code{notificationItem} if missing data has been
+#' @title Check 'n' Notify
+#' @description Check a dataset for missing data from the day before and the
+#'  past week, and create a `notificationItem` if missing data has been
 #'  detected.
-#'@param dataset A data.frame with a 'date' column.
-#'@param label The label to use in the notification.
-#'@family Shiny Dashboarding
-#'@name check_notify
+#' @param dataset A data.frame with a 'date' column.
+#' @param label The label to use in the notification.
+#' @family Shiny Dashboarding
+#' @name check_notify
 NULL
 
-#'@rdname check_notify
-#'@importFrom shinydashboard notificationItem
-#'@importFrom shiny icon
-#'@export
+#' @rdname check_notify
+#' @importFrom shinydashboard notificationItem
+#' @importFrom shiny icon
+#' @export
 check_yesterday <- function(dataset, label) {
   # e.g. label = "desktop events"
   yesterday_date <- Sys.Date() - 1
@@ -22,10 +22,10 @@ check_yesterday <- function(dataset, label) {
   return(NULL)
 }
 
-#'@rdname check_notify
-#'@importFrom shinydashboard notificationItem
-#'@importFrom shiny icon
-#'@export
+#' @rdname check_notify
+#' @importFrom shinydashboard notificationItem
+#' @importFrom shiny icon
+#' @export
 check_past_week <- function(dataset, label) {
   past_week <- Sys.Date() - c(2:7) # Sys.Date()-1 is already handled by check_yesterday()
   if (any(!(past_week %in% dataset$date))) {

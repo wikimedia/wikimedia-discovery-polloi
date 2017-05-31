@@ -14,9 +14,8 @@ safe_tail(x, n, silent = TRUE)
 \item{silent}{whether to produce warnings and messages or not. TRUE by default.}
 }
 \description{
-using tail() to get the last sequential values in an object relies
+Using \code{tail()} to get the last sequential values in an object relies
 on that object being ordered, which it sometimes isn't due to backfilling. \code{safe_tail}
 retrieves the last N values in a "safe" way, taking the possibility of unordered data into
 account.
 }
-

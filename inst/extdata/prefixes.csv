@@ -28,7 +28,7 @@ Bavarian,Boarisch,bar
 Belarusian,беларуская,be
 Belarusian (Taraškievica),беларуская (тарашкевіца)‎,be-tarask
 Bengali,বাংলা,bn
-Bihari,भोजपुरी,bh
+Bhojpuri,भोजपुरी,bh
 Bishnupriya Manipuri,বিষ্ণুপ্রিয়া মণিপুরী,bpy
 Bislama,Bislama,bi
 Bosnian,bosanski,bs
@@ -59,6 +59,7 @@ Croatian,hrvatski,hr
 Czech,čeština,cs
 Danish,dansk,da
 Divehi,ދިވެހިބަސް,dv
+Doteli,डोटेली,dty
 Dutch,Nederlands,nl
 Dutch Low Saxon,Nedersaksies,nds-nl
 Dzongkha,ཇོང་ཁ,dz
@@ -85,7 +86,6 @@ Gan,贛語,gan
 Georgian,ქართული,ka
 German,Deutsch,de
 Gilaki,گیلکی,glk
-Goan Konkani,गोंयची कोंकणी / Gõychi Konknni,gom
 Gothic,𐌲𐌿𐍄𐌹𐍃𐌺,got
 Greek,Ελληνικά,el
 Greenlandic,kalaallisut,kl
@@ -134,6 +134,7 @@ Kirundi,Kirundi,rn
 Komi,коми,kv
 Komi-Permyak,Перем Коми,koi
 Kongo,Kongo,kg
+Konkani,गोंयची कोंकणी / Gõychi Konknni,gom
 Korean,한국어,ko
 Kuanyama,Kwanyama,kj
 Kurdish (Kurmanji),Kurdî,ku

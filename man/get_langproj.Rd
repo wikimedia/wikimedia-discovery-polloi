@@ -8,16 +8,15 @@ get_langproj()
 }
 \description{
 Returns a dataset containing all the projects and all possible
-  language-project combinations for multilingual projects.
+language-project combinations for multilingual projects.
 }
 \details{
 We use a Cartesian product here because we cannot trust the matrix
-  of languages and projects to be up-to-date, because it is not usually
-  updated when a new wiki is deployed. The product method ensures that all
-  the multilingual wikis are correctly captured (provided we have the
-  latest prefixes) by \code{\link{parse_wikiid}}.
+of languages and projects to be up-to-date, because it is not usually
+updated when a new wiki is deployed. The product method ensures that all
+the multilingual wikis are correctly captured (provided we have the
+latest prefixes) by \link{parse_wikiid}.
 }
 \seealso{
-\code{\link{get_prefixes}}, \code{\link{get_projects}}
+\link{get_prefixes}, \link{get_projects}
 }
-

@@ -11,12 +11,11 @@ na_box(subtitle)
 }
 \description{
 This is used in cases where something has gone wrong with the
- data and a value could not be calculated. This ensures the "bad data" value
- boxes have a consistent look.
+data and a value could not be calculated. This ensures the "bad data" value
+boxes have a consistent look.
 }
 \seealso{
 Other Shiny Dashboarding: \code{\link{check_notify}},
   \code{\link{cond_color}}, \code{\link{cond_icon}},
   \code{\link{time_frame_range}}
 }
-

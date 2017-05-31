@@ -15,4 +15,3 @@ Set to TRUE by default.}
 \description{
 easily sample the top or bottom half of an object.
 }
-

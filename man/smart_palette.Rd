@@ -14,8 +14,7 @@ A character vector of \code{n} colors.
 }
 \description{
 Picks between 3 different color palettes based on number of
- categories to visualize. For <13 categories, uses Set1, Paired, & Set3
- from RColorBrewer. For More than 12 categories, builds a HCL color
- space-based palette.
+categories to visualize. For <13 categories, uses Set1, Paired, & Set3
+from RColorBrewer. For More than 12 categories, builds a HCL color
+space-based palette.
 }
-

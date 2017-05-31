@@ -1,3 +1,9 @@
+polloi 0.1.8
+============
+- Updates dataset of prefixes
+- Changes path to download datasets from
+- Uses latest roxygen with markdown support
+
 polloi 0.1.7
 ============
 - Fixes a bug wherein a "found duplicated data in" message was incorrectly displayed (specifically, when there was no duplicated data).

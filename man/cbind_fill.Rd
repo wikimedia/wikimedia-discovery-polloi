@@ -14,9 +14,8 @@ A matrix with NAs wherever needed.
 }
 \description{
 Take a sequence of vector, matrix or data-frame arguments and
- combine by columns or rows, respectively.
+combine by columns or rows, respectively.
 }
 \references{
 \url{http://r.789695.n4.nabble.com/How-to-join-matrices-of-different-row-length-from-a-list-td3177212.html}
 }
-

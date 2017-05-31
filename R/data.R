@@ -17,7 +17,7 @@
 #'
 #' @source \url{https://meta.wikimedia.org/wiki/Template:Table_of_Wikimedia_projects#Projects_per_language_codes}
 #' @importFrom readr read_csv
-#' @seealso \code{\link{update_prefixes}}, \code{\link{get_projects}}, \code{\link{get_langproj}}
+#' @seealso [update_prefixes], [get_projects], [get_langproj]
 #' @export
 get_prefixes <- function() {
   return(readr::read_csv(system.file("extdata/prefixes.csv", package = "polloi")))
@@ -37,7 +37,7 @@ get_prefixes <- function() {
 #'
 #' @source \url{https://meta.wikimedia.org/wiki/Table_of_Wikimedia_projects}
 #' @importFrom readr read_csv
-#' @seealso \code{\link{update_projects}}, \code{\link{get_prefixes}}, \code{\link{get_langproj}}
+#' @seealso [update_projects], [get_prefixes], [get_langproj]
 #' @export
 get_projects <- function() {
   return(readr::read_csv(system.file("extdata/projects.csv", package = "polloi")))
@@ -50,10 +50,10 @@ get_projects <- function() {
 #'   of languages and projects to be up-to-date, because it is not usually
 #'   updated when a new wiki is deployed. The product method ensures that all
 #'   the multilingual wikis are correctly captured (provided we have the
-#'   latest prefixes) by \code{\link{parse_wikiid}}.
+#'   latest prefixes) by [parse_wikiid].
 #' @importFrom magrittr "%>%"
 #' @importFrom tidyr separate
-#' @seealso \code{\link{get_prefixes}}, \code{\link{get_projects}}
+#' @seealso [get_prefixes], [get_projects]
 #' @export
 get_langproj <- function() {
   prefixes <- get_prefixes()

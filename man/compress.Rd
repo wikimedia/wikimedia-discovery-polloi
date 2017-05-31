@@ -15,4 +15,3 @@ compress(x, round_by = 2)
 takes a numeric vector (1200, 1300, 1400) and converts it to
 use SI suffixes (1.2K, 1.3K, 1.4k)
 }
-

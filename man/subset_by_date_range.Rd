@@ -18,4 +18,3 @@ the subsetting.}
 \item{date_col}{Just in case the date column is named something else other
 than 'date'}
 }
-

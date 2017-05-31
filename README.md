@@ -1,13 +1,12 @@
 Common Files and Functions
 ==========================
 
-This repository contains files and functions used by all the [Discovery Dashboards](http://discovery.wmflabs.org/) projects.
+This repository contains files and functions used by all the [Discovery Dashboards](https://discovery.wmflabs.org/) projects.
 
 ## Installation
 
 ```R
-# install.packages("devtools", repos = "https://cran.rstudio.com/")
-
+# install.packages("devtools", repos = c(CRAN = "https://cran.rstudio.com/"))
 devtools::install_git("https://gerrit.wikimedia.org/r/wikimedia/discovery/polloi")
 ```
 

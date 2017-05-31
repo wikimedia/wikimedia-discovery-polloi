@@ -21,4 +21,3 @@ Other inputs: \code{\link{automata_select}},
   \code{\link{smooth_select}},
   \code{\link{timeframe_daterange}}
 }
-

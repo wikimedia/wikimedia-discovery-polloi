@@ -17,4 +17,3 @@ be compared to the equivalent y value.}
 calculates a delta between X or Y (or sequential X values)
 expressed as a percentage.
 }
-

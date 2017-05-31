@@ -10,8 +10,8 @@ custom_axis_formatter
 }
 \description{
 This is a JS date formatter to be used in \code{dyAxis} when
- it's desired to have the dates on the axis look like "Monday (8/13)", in
- other words: "Day of the week (MM/DD)"
+it's desired to have the dates on the axis look like "Monday (8/13)", in
+other words: "Day of the week (MM/DD)"
 }
 \examples{
 \dontrun{
@@ -20,4 +20,3 @@ polloi::make_dygraph(data) \%>\%
 }
 }
 \keyword{datasets}
-

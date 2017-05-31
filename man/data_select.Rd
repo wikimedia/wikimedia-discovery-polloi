@@ -18,6 +18,5 @@ The appropriate object.
 }
 \description{
 Like \code{ifelse}, but not awful and usable with
- \code{data.frames}.
+\code{data.frame}s, similar to \link[dplyr:if_else]{dplyr::if_else}
 }
-

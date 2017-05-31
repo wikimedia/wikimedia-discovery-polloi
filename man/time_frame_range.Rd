@@ -26,19 +26,16 @@ A Date vector of length 2
 \description{
 This figures out the date range based on the four different
 inputs: local & global timeframe selections and local & global date range
-selections. It is used for \code{subset_by_date_range}.
+selections. It is used for \link{subset_by_date_range}.
 }
 \examples{
 \dontrun{
 time_frame_range(input$timeframe, input$daterange,
-                input$timeframe_global, input$daterange_global)
+                 input$timeframe_global, input$daterange_global)
 }
 }
 \seealso{
-\code{\link{subset_by_date_range}}
-
 Other Shiny Dashboarding: \code{\link{check_notify}},
   \code{\link{cond_color}}, \code{\link{cond_icon}},
   \code{\link{na_box}}
 }
-

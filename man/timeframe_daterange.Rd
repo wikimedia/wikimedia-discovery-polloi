@@ -8,18 +8,15 @@ timeframe_daterange(select_input_id, label = "Custom Date Range")
 }
 \arguments{
 \item{select_input_id}{The ID you used for the corresponding
-\code{timeframe_select}}
+\link{timeframe_select}}
 
 \item{label}{Label}
 }
 \value{
-A \code{conditionalPanel} containing a \code{dateRangeInput}
+A \link[shiny:conditionalPanel]{shiny::conditionalPanel} containing a \link[shiny:dateRangeInput]{shiny::dateRangeInput}
 }
 \seealso{
-timeframe_select
-
 Other inputs: \code{\link{automata_select}},
   \code{\link{smooth_select}},
   \code{\link{timeframe_select}}
 }
-

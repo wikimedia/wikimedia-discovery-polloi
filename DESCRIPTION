@@ -1,17 +1,17 @@
 Package: polloi
 Type: Package
 Title: Common Functionality for Wikimedia Dashboards
-Version: 0.1.7
-Date: 2016-12-07
+Version: 0.1.8
+Date: 2017-05-31
 Authors@R: c(
-    person("Oliver", "Keyes", role = "aut"),
-    person("Mikhail", "Popov", email = "mpopov@wikimedia.org", role = c("aut", "cre")))
+    person("Mikhail", "Popov", email = "mpopov@wikimedia.org", role = c("aut", "cre")),
+    person("Oliver", "Keyes", role = "aut")
+    )
 Description: This package contains common functionality for all of the
     Wikimedia Foundation's Shiny Dashboards.
 License: MIT + file LICENSE
 URL: https://phabricator.wikimedia.org/diffusion/WDPL/
-BugReports: https://phabricator.wikimedia.org/maniphest/task/create/?
-    projects=Discovery-Analysis
+BugReports: https://phabricator.wikimedia.org/maniphest/task/create/?projects=Discovery-Analysis
 Depends:
     R (>= 3.1.0)
 Imports:
@@ -28,9 +28,10 @@ Imports:
     dplyr (>= 0.4.3),
     tidyr (>= 0.4.1),
     mgcv
-LazyData: TRUE
-RoxygenNote: 5.0.1
 Suggests:
     rvest (>= 0.3.1),
     xml2 (>= 0.1.2),
     httr (>= 1.1.0)
+LazyData: TRUE
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.0.1

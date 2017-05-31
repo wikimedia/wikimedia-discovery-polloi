@@ -2,8 +2,8 @@
 % Please edit documentation in R/check_notify.R
 \name{check_notify}
 \alias{check_notify}
-\alias{check_past_week}
 \alias{check_yesterday}
+\alias{check_past_week}
 \title{Check 'n' Notify}
 \usage{
 check_yesterday(dataset, label)
@@ -17,12 +17,11 @@ check_past_week(dataset, label)
 }
 \description{
 Check a dataset for missing data from the day before and the
- past week, and create a \code{notificationItem} if missing data has been
- detected.
+past week, and create a \code{notificationItem} if missing data has been
+detected.
 }
 \seealso{
 Other Shiny Dashboarding: \code{\link{cond_color}},
   \code{\link{cond_icon}}, \code{\link{na_box}},
   \code{\link{time_frame_range}}
 }
-

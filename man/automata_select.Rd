@@ -16,4 +16,3 @@ Other inputs: \code{\link{smooth_select}},
   \code{\link{timeframe_daterange}},
   \code{\link{timeframe_select}}
 }
-

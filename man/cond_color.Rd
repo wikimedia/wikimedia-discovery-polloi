@@ -22,4 +22,3 @@ Other Shiny Dashboarding: \code{\link{check_notify}},
   \code{\link{cond_icon}}, \code{\link{na_box}},
   \code{\link{time_frame_range}}
 }
-
