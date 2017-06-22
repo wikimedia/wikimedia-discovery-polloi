@@ -5,7 +5,6 @@
 #' @importFrom magrittr "%>%" set_names
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_nodes html_table
-#' @importFrom readr write_csv
 #' @export
 update_prefixes <- function() {
   if (!requireNamespace("rvest", quietly = TRUE) && !requireNamespace("xml2", quietly = TRUE)) {
@@ -60,4 +59,17 @@ parse_wikiid <- function(x) {
   temp$wikiid <- sub("-", "_", temp$wikiid)
   result <- left_join(data.frame(wikiid = x, stringsAsFactors = FALSE), temp, by = "wikiid")
   return(result[, c('language', 'project')])
+}
+
+#' @title Update Country and Region Names with Traffic to Wikipedia.org
+#' @description Get unique country and region names from the **country** column of
+#'   \url{https://analytics.wikimedia.org/datasets/discovery/metrics/portal/all_country_data.tsv}.
+#' @param dev Logical flag that controls whether fetched country list is saved
+#'   to the **data/** directory (`dev = TRUE`) or to where *polloi* is
+#'   installed (default)
+#' @export
+update_portal_regions <- function(dev = FALSE) {
+  portal_regions <- read_dataset("discovery/metrics/portal/all_country_data.tsv", col_types = "Dcididid")
+  portal_regions <- sort(c(unique(portal_regions$country), "United States"))
+  devtools::use_data(portal_regions, pkg = ifelse(dev, ".", system.file(package = "polloi")), overwrite = TRUE)
 }

@@ -1,11 +1,12 @@
 Package: polloi
 Type: Package
 Title: Common Functionality for Wikimedia Dashboards
-Version: 0.1.8
-Date: 2017-05-31
+Version: 0.1.9
+Date: 2017-06-26
 Authors@R: c(
-    person("Mikhail", "Popov", email = "mpopov@wikimedia.org", role = c("aut", "cre")),
-    person("Oliver", "Keyes", role = "aut")
+    person("Mikhail", "Popov", email = "mikhail@wikimedia.org", role = c("aut", "cre")),
+    person("Chelsy", "Xie", email = "cxie@wikimedia.org", role = "aut"),
+    person("Oliver", "Keyes", role = "aut", comment = "No longer employed at the Foundation")
     )
 Description: This package contains common functionality for all of the
     Wikimedia Foundation's Shiny Dashboards.
@@ -15,23 +16,27 @@ BugReports: https://phabricator.wikimedia.org/maniphest/task/create/?projects=Di
 Depends:
     R (>= 3.1.0)
 Imports:
-    magrittr,
+    colorspace,
+    devtools,
+    dplyr,
     dygraphs,
-    RColorBrewer,
-    xts,
-    readr,
+    httr,
     lubridate,
+    magrittr,
+    mgcv,
     plyr,
+    RColorBrewer,
+    readr,
+    rvest,
     shiny,
     shinydashboard,
-    zoo,
-    dplyr (>= 0.4.3),
-    tidyr (>= 0.4.1),
-    mgcv
+    tidyr,
+    xml2,
+    xts,
+    zoo
 Suggests:
-    rvest (>= 0.3.1),
-    xml2 (>= 0.1.2),
-    httr (>= 1.1.0)
+    datasets,
+    ISOcodes
 LazyData: TRUE
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1

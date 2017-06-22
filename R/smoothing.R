@@ -22,10 +22,6 @@ smooth_switch <- function(global, local){
 #'   "month", and "gam"
 #' @param rename whether to rename the fields once smoothed. TRUE by default.
 #' @export
-#' @importFrom plyr ddply
-#' @importFrom lubridate week year month
-#' @importFrom zoo rollmean
-#' @importFrom mgcv gam s predict.gam
 smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
   # Determine the names and levels of aggregation. By default
   # a smoothing level of "day" is assumed, which is no smoothing
@@ -45,7 +41,7 @@ smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
            smoothed <- as.data.frame(do.call(cbind,
              lapply(dataset[, -1, drop = FALSE], function(var_to_smooth) {
                return(tryCatch({
-                 fit <- mgcv::gam(y ~ s(x, k = 14),
+                 fit <- mgcv::gam(y ~ mgcv::s(x, k = 14),
                             data = data.frame(x = as.numeric(dataset$date),
                                               y = var_to_smooth,
                                               stringsAsFactors = FALSE))
@@ -71,7 +67,7 @@ smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
                           # Construct output names for the averages, compute those averages, and
                           # apply said names.
                           output_names <- paste0(names(df)[2:(ncol(df) - 2)], name_append)
-                          holding <- apply(df[, 2:(ncol(df) - 2), drop = FALSE], 2, FUN = median) %>%
+                          holding <- apply(df[, 2:(ncol(df) - 2), drop = FALSE], 2, FUN = stats::median) %>%
                             round %>% t %>% as.data.frame
                           names(holding) <- output_names
 

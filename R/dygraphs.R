@@ -54,7 +54,6 @@ smart_palette <- function(n) {
 #'   plots within a group is automatically synchronized.
 #' @param ... Additional parameters to pass on to [dygraphs::dyOptions].
 #' @importFrom dygraphs renderDygraph dyCSS dyOptions dyLegend dygraph
-#' @importFrom xts xts
 #' @importFrom RColorBrewer brewer.pal
 #' @importFrom magrittr "%>%"
 #' @export
@@ -79,7 +78,7 @@ make_dygraph <- function(data, xlab, ylab, title,
     if (is.null(legend_name)) {
       legend_name <- names(data)[2]
     }
-    data <- xts(data[[2]], data[[1]])
+    data <- xts::xts(data[[2]], data[[1]])
     names(data) <- legend_name
   } else {
     data <- xts::xts(data[,-1], order.by = data[[1]])
@@ -119,7 +118,6 @@ cond_color <- function(condition, true_color = "green") {
 #' @param true_direction which direction represents a positive change. "up" by
 #'   default.
 #' @family Shiny Dashboarding
-#' @importFrom shiny icon
 #' @export
 cond_icon <- function(condition, true_direction = "up") {
 

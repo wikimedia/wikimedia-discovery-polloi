@@ -9,8 +9,8 @@ half(x, top = TRUE)
 \arguments{
 \item{x}{the object to sample from}
 
-\item{top}{whether it should be the top (TRUE) or bottom (FALSE) half.
-Set to TRUE by default.}
+\item{top}{whether it should be the top (TRUE) or bottom (FALSE) half. Set
+to TRUE by default.}
 }
 \description{
 easily sample the top or bottom half of an object.

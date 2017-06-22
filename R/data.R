@@ -16,11 +16,10 @@
 #'   e.g. \url{https://meta.wikimedia.org/wiki/Template:Eln_ady}
 #'
 #' @source \url{https://meta.wikimedia.org/wiki/Template:Table_of_Wikimedia_projects#Projects_per_language_codes}
-#' @importFrom readr read_csv
 #' @seealso [update_prefixes], [get_projects], [get_langproj]
 #' @export
 get_prefixes <- function() {
-  return(readr::read_csv(system.file("extdata/prefixes.csv", package = "polloi")))
+  return(readr::read_csv(system.file("extdata/prefixes.csv", package = "polloi"), col_types = "ccc"))
 }
 
 #' @title Wikimedia Projects
@@ -36,11 +35,10 @@ get_prefixes <- function() {
 #' }
 #'
 #' @source \url{https://meta.wikimedia.org/wiki/Table_of_Wikimedia_projects}
-#' @importFrom readr read_csv
 #' @seealso [update_projects], [get_prefixes], [get_langproj]
 #' @export
 get_projects <- function() {
-  return(readr::read_csv(system.file("extdata/projects.csv", package = "polloi")))
+  return(readr::read_csv(system.file("extdata/projects.csv", package = "polloi"), col_types = "cclc"))
 }
 
 #' @title Wikimedia Language-Project Tuples
@@ -70,4 +68,49 @@ get_langproj <- function() {
     separate("name", into = c("language", "project"), sep = ":") %>%
     rbind(projects, .)
   return(result)
+}
+
+#' @title Countries and Regions with Traffic to Wikipedia.org
+#' @format `portal_regions` is a character vector containing about 230
+#'   country/region names with traffic to Wikipedia.org (portal).
+#'
+#' @source \url{https://analytics.wikimedia.org/datasets/discovery/metrics/portal/all_country_data.tsv}
+#' @seealso [update_portal_regions]
+"portal_regions"
+
+#' @title U.S. States and Regions
+#' @description Returns a dataset containing all U.S. states' and territories'
+#'   names, abbreviations and regions.
+#'
+#' @format A data frame with 56 rows and 3 variables:
+#' \describe{
+#'   \item{abb}{The abbreviations of U.S. states and territories.}
+#'   \item{region}{The regions of U.S. states and territories. See
+#'    https://phabricator.wikimedia.org/T136257#2399411.}
+#'   \item{state}{The names of U.S. states and territories.}
+#' }
+#'
+#' @source `ISO_3166_1` from package `ISOcodes`; `state.name`, `state.abb` and
+#'  `state.region` from package `datasets`; see
+#'   \url{https://phabricator.wikimedia.org/T136257#2399411} for U.S. regions.
+#' @export
+get_us_state <- function() {
+  return(readr::read_csv(system.file("extdata/us_state_region.csv", package = "polloi"), col_types = "ccc"))
+}
+
+#' @title All Countries and U.S. States
+#' @description Returns a dataset containing all countries' and U.S. states'
+#'   names and abbreviations.
+#'
+#' @format A data frame with 300 rows and 2 variables:
+#' \describe{
+#'   \item{abb}{The abbreviations of all countries and U.S. states.}
+#'   \item{name}{The names of all countries and U.S. states.}
+#' }
+#'
+#' @source `ISO_3166_1` from package `ISOcodes`; `state.name`, `state.abb` and
+#'  `state.region` from package `datasets`.
+#' @export
+get_country_state <- function() {
+  return(readr::read_csv(system.file("extdata/all_countries_us_states.csv", package = "polloi"), col_types = "cc"))
 }

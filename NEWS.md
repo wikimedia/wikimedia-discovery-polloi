@@ -1,3 +1,7 @@
+polloi 0.1.9
+============
+- Adds geography datasets and functions ([T167913](https://phabricator.wikimedia.org/T167913))
+
 polloi 0.1.8
 ============
 - Updates dataset of prefixes
