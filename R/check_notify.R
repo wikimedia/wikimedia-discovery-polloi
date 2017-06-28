@@ -16,7 +16,7 @@ check_yesterday <- function(dataset, label) {
   # e.g. label = "desktop events"
   yesterday_date <- Sys.Date() - 1
   if (!(yesterday_date %in% dataset$date)) {
-    return(notificationItem(text = paste("No", label," from yesterday."),
+    return(notificationItem(text = paste("No", label," from yesterday."), # Exclude Linting
                             icon = icon("table"), status = "danger"))
   }
   return(NULL)
@@ -29,7 +29,7 @@ check_yesterday <- function(dataset, label) {
 check_past_week <- function(dataset, label) {
   past_week <- Sys.Date() - c(2:7) # Sys.Date()-1 is already handled by check_yesterday()
   if (any(!(past_week %in% dataset$date))) {
-    return(notificationItem(text = paste("No", label," from past week."),
+    return(notificationItem(text = paste("No", label," from past week."), # Exclude Linting
                             icon = icon("table"), status = "danger"))
   }
   return(NULL)

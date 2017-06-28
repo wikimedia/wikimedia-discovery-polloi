@@ -7,11 +7,11 @@
 cond_color(condition, true_color = "green")
 }
 \arguments{
-\item{condition}{a condition to be evaluated to produce a single TRUE or
-FALSE value.}
+\item{condition}{a condition to be evaluated to produce a single \code{TRUE} or
+\code{FALSE} value}
 
-\item{true_color}{the colour used to represent a TRUE result. Green by
-default.}
+\item{true_color}{the colour used to represent a \code{TRUE} result. Green by
+default}
 }
 \description{
 select a colour based on the true/false nature of a condition.

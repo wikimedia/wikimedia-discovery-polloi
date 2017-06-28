@@ -7,14 +7,20 @@
 smoother(dataset, smooth_level = "day", rename = TRUE)
 }
 \arguments{
-\item{dataset}{an untidy, dygraph-appropriate data.frame}
+\item{dataset}{an untidy, dygraph-appropriate \code{data.frame}}
 
 \item{smooth_level}{the level of smoothing. Options are "day", "week",
-"month", and "gam"}
+"month", and "gam" (for smoothing via splines)}
 
-\item{rename}{whether to rename the fields once smoothed. TRUE by default.}
+\item{rename}{whether to rename the fields once smoothed. \code{TRUE} by default}
 }
 \description{
 Takes an untidy (read: dygraph-appropriate) dataset and adds
 columns for each variable consisting of the smoothed, averaged mean.
+}
+\examples{
+data(wdqs_usage)
+smoother(wdqs_usage, "week")
+smoother(wdqs_usage, "month")
+smoother(wdqs_usage, "gam")
 }

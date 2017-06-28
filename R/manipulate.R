@@ -24,7 +24,9 @@ safe_tail <- function(x, n, silent = TRUE) {
     }
     return(utils::tail(x, n))
   }
-  if (length(timestamp_column) > 1) warning("More than one date/timestamp column detected. Defaulting to the first one.")
+  if (length(timestamp_column) > 1) {
+    warning("More than one date/timestamp column detected. Defaulting to the first one.")
+  }
   if (!silent) {
     message("Sorting by the date/timestamp column before returning the bottom ", n, " rows.")
   }
@@ -39,18 +41,23 @@ safe_tail <- function(x, n, silent = TRUE) {
 #' @export
 half <- function(x, top = TRUE){
   if (top) {
-    return(utils::head(x, n = length(x)/2))
+    return(utils::head(x, n = length(x) / 2))
   }
-  return(utils::tail(x, n = length(x)/2))
+  return(utils::tail(x, n = length(x) / 2))
 }
 
 #' @title Subset a data frame by a date range
-#' @param x Data frame
+#' @description Enables the user to subset a `data.frame` by a specific date
+#'   range.
+#' @param x `data.frame`
 #' @param range A vector of length 2
-#' @param from,to A character or Date object to use as upper/lower bound for
-#'   the subsetting.
+#' @param from,to A `character` or `Date` object to use as upper/lower bound
+#'   for the subsetting
 #' @param date_col Just in case the date column is named something else other
 #'   than 'date'
+#' @examples
+#' data(wdqs_usage)
+#' subset_by_date_range(wdqs_usage, from = "2017-01-01", to = "2017-01-31")
 #' @importFrom lubridate ymd
 #' @export
 subset_by_date_range <- function(x, range = NULL, from = NULL, to = NULL, date_col = "date") {
@@ -80,12 +87,20 @@ subset_by_date_range <- function(x, range = NULL, from = NULL, to = NULL, date_c
 #'   combine by columns or rows, respectively.
 #' @param ... Vectors or matrices.
 #' @return A matrix with NAs wherever needed.
+#' @examples
+#' A <- matrix(1:4, 2, 2)
+#' B <- matrix(1:6, 3, 2)
+#' C <- matrix(2:1, 1, 2)
+#' cbind_fill(A, B, C)
 #' @references \url{http://r.789695.n4.nabble.com/How-to-join-matrices-of-different-row-length-from-a-list-td3177212.html}
+#' @author D. Rizopoulos
 #' @export
 cbind_fill <- function(...) {
   nm <- lapply(list(...), as.matrix)
   n <- max(sapply(nm, nrow))
-  do.call(cbind, lapply(nm, function (x) rbind(x, matrix(, n-nrow(x), ncol(x)))))
+  return(do.call(cbind, lapply(nm, function(x) {
+    rbind(x, matrix(NA, n - nrow(x), ncol(x)))
+  })))
 }
 
 #' @title Conditionally Select A Dataset

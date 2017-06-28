@@ -11,6 +11,9 @@ automata_select(input_id, label = "Include automata (e.g. web crawlers)")
 
 \item{label}{Label}
 }
+\description{
+Creates a checkbox for including/excluding automata.
+}
 \seealso{
 Other inputs: \code{\link{smooth_select}},
   \code{\link{timeframe_daterange}},

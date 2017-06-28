@@ -8,13 +8,21 @@ subset_by_date_range(x, range = NULL, from = NULL, to = NULL,
   date_col = "date")
 }
 \arguments{
-\item{x}{Data frame}
+\item{x}{\code{data.frame}}
 
 \item{range}{A vector of length 2}
 
-\item{from, to}{A character or Date object to use as upper/lower bound for
-the subsetting.}
+\item{from, to}{A \code{character} or \code{Date} object to use as upper/lower bound
+for the subsetting}
 
 \item{date_col}{Just in case the date column is named something else other
 than 'date'}
+}
+\description{
+Enables the user to subset a \code{data.frame} by a specific date
+range.
+}
+\examples{
+data(wdqs_usage)
+subset_by_date_range(wdqs_usage, from = "2017-01-01", to = "2017-01-31")
 }

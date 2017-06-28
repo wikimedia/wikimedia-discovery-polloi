@@ -15,6 +15,9 @@ timeframe_daterange(select_input_id, label = "Custom Date Range")
 \value{
 A \link[shiny:conditionalPanel]{shiny::conditionalPanel} containing a \link[shiny:dateRangeInput]{shiny::dateRangeInput}
 }
+\description{
+Creates a date ranger selector.
+}
 \seealso{
 Other inputs: \code{\link{automata_select}},
   \code{\link{smooth_select}},

@@ -8,25 +8,25 @@ make_dygraph(data, xlab, ylab, title, legend_name = NULL, use_si = TRUE,
   expr = NULL, group = NULL, ...)
 }
 \arguments{
-\item{data}{a \code{data.frame} reformatted to be XTS-able.}
+\item{data}{a \code{data.frame} reformatted to be XTS-able}
 
-\item{xlab}{the label to use for the dygraph's x-axis.}
+\item{xlab}{the label to use for the dygraph's x-axis}
 
-\item{ylab}{the label to use for the dygraph's y-axis.}
+\item{ylab}{the label to use for the dygraph's y-axis}
 
-\item{title}{the title to use on the dygraph.}
+\item{title}{the title to use on the dygraph}
 
 \item{legend_name}{a custom name for the variable in the event that
-\code{is_single} is TRUE. NULL by default (in which case the variable
-will be named "events").}
+\code{is_single} is \code{TRUE}. \code{NULL} by default (in which case the variable
+will be named "events")}
 
-\item{use_si}{whether to use si labelling (1000 becomes 1K). TRUE by default.}
+\item{use_si}{whether to use si labelling (1000 becomes 1K). \code{TRUE} by default}
 
 \item{expr}{an optional expression to evaluate prior to building the dygraph.
-We use this in (for example) reactive graphing.}
+We use this in (for example) reactive graphing}
 
 \item{group}{Group to associate this plot with. The x-axis zoom level of
-plots within a group is automatically synchronized.}
+plots within a group is automatically synchronized}
 
 \item{...}{Additional parameters to pass on to \link[dygraphs:dyOptions]{dygraphs::dyOptions}.}
 }

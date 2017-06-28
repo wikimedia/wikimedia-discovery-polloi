@@ -1,8 +1,8 @@
 Package: polloi
 Type: Package
 Title: Common Functionality for Wikimedia Dashboards
-Version: 0.1.9
-Date: 2017-06-26
+Version: 0.2.0
+Date: 2017-06-28
 Authors@R: c(
     person("Mikhail", "Popov", email = "mikhail@wikimedia.org", role = c("aut", "cre")),
     person("Chelsy", "Xie", email = "cxie@wikimedia.org", role = "aut"),
@@ -36,7 +36,9 @@ Imports:
     zoo
 Suggests:
     datasets,
-    ISOcodes
+    ISOcodes,
+    lintr,
+    testthat
 LazyData: TRUE
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1

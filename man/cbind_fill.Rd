@@ -16,6 +16,15 @@ A matrix with NAs wherever needed.
 Take a sequence of vector, matrix or data-frame arguments and
 combine by columns or rows, respectively.
 }
+\examples{
+A <- matrix(1:4, 2, 2)
+B <- matrix(1:6, 3, 2)
+C <- matrix(2:1, 1, 2)
+cbind_fill(A, B, C)
+}
 \references{
 \url{http://r.789695.n4.nabble.com/How-to-join-matrices-of-different-row-length-from-a-list-td3177212.html}
+}
+\author{
+D. Rizopoulos
 }

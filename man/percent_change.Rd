@@ -9,9 +9,9 @@ percent_change(x, y = NULL)
 \arguments{
 \item{x}{a numeric vector}
 
-\item{y}{(optionally) an additional numeric vector. If y is not provided, each
-value in x will be compared to the subsequent value - if y is, each x value will
-be compared to the equivalent y value.}
+\item{y}{(optionally) an additional numeric vector. If y is not provided,
+each value in x will be compared to the subsequent value - if y is, each x
+value will be compared to the equivalent y value}
 }
 \description{
 calculates a delta between X or Y (or sequential X values)

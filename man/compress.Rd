@@ -9,9 +9,12 @@ compress(x, round_by = 2)
 \arguments{
 \item{x}{a vector of numeric or integer values}
 
-\item{round_by}{how many digits to round the resulting numbers by.}
+\item{round_by}{how many digits to round the resulting numbers by}
 }
 \description{
-takes a numeric vector (1200, 1300, 1400) and converts it to
-use SI suffixes (1.2K, 1.3K, 1.4k)
+takes a numeric vector (e.g. 1200, 1300000) and converts it to
+use SI suffixes (e.g. 1.2K, 1.3M)
+}
+\references{
+\url{https://stackoverflow.com/questions/28159936/formatting-large-currency-or-dollar-values-to-millions-billions/}
 }

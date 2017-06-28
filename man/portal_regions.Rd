@@ -12,6 +12,10 @@ country/region names with traffic to Wikipedia.org (portal).}
 \usage{
 portal_regions
 }
+\description{
+Names of countries and names of regions in United States,
+for example: "U.S. (South)"
+}
 \seealso{
 \link{update_portal_regions}
 }

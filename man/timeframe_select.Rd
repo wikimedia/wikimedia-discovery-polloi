@@ -14,6 +14,10 @@ timeframe_select(input_id, label = "Time Frame")
 \value{
 A \code{selectInput}
 }
+\description{
+Creates a select list that can be used for selecting a time
+frame (e.g. "Last 90 days").
+}
 \seealso{
 timeframe_daterange "Shiny Dashboarding"
 

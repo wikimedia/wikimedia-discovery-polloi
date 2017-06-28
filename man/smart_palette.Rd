@@ -7,10 +7,10 @@
 smart_palette(n)
 }
 \arguments{
-\item{n}{Number of colors to return (number of categories).}
+\item{n}{Number of colors to return (number of categories)}
 }
 \value{
-A character vector of \code{n} colors.
+A character vector of \code{n} colors
 }
 \description{
 Picks between 3 different color palettes based on number of

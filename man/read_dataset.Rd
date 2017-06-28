@@ -4,12 +4,14 @@
 \alias{read_dataset}
 \title{Read Datasets from datasets.wikimedia}
 \usage{
-read_dataset(path, force_uncached = TRUE, ...)
+read_dataset(path, force_uncached = TRUE, silent = FALSE, ...)
 }
 \arguments{
 \item{path}{the path to the file, starting from https://analytics.wikimedia.org/datasets/}
 
-\item{force_uncached}{If TRUE, appends a \code{?ts=...} to URL to force an uncached version}
+\item{force_uncached}{If \code{TRUE}, appends a \code{?ts=...} to URL to force an uncached version}
+
+\item{silent}{if \code{TRUE}, suppresses a warning about duplicated data being found}
 
 \item{...}{Additional arguments to be passed to \link[readr:read_delim]{readr::read_delim}}
 }

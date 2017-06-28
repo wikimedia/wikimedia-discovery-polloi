@@ -11,6 +11,9 @@ smooth_select(input_id, label = "Smoothing")
 
 \item{label}{Label}
 }
+\description{
+Creates a select list for picking smoothing level.
+}
 \seealso{
 Other inputs: \code{\link{automata_select}},
   \code{\link{timeframe_daterange}},

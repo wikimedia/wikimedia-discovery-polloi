@@ -4,7 +4,12 @@
 \alias{update_prefixes}
 \title{Update internal index of language prefixes.}
 \usage{
-update_prefixes()
+update_prefixes(dev = FALSE)
+}
+\arguments{
+\item{dev}{Logical flag that controls whether fetched prefix list is saved
+to the \strong{data/} directory (\code{dev = TRUE}) or to where \emph{polloi} is
+installed (default)}
 }
 \description{
 Scrapes the table off

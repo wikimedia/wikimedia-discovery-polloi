@@ -17,10 +17,15 @@ smooth_switch <- function(global, local){
 #' @title Dynamically Smooth Data
 #' @description Takes an untidy (read: dygraph-appropriate) dataset and adds
 #' columns for each variable consisting of the smoothed, averaged mean.
-#' @param dataset an untidy, dygraph-appropriate data.frame
+#' @param dataset an untidy, dygraph-appropriate `data.frame`
 #' @param smooth_level the level of smoothing. Options are "day", "week",
-#'   "month", and "gam"
-#' @param rename whether to rename the fields once smoothed. TRUE by default.
+#'   "month", and "gam" (for smoothing via splines)
+#' @param rename whether to rename the fields once smoothed. `TRUE` by default
+#' @examples
+#' data(wdqs_usage)
+#' smoother(wdqs_usage, "week")
+#' smoother(wdqs_usage, "month")
+#' smoother(wdqs_usage, "gam")
 #' @export
 smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
   # Determine the names and levels of aggregation. By default
@@ -41,7 +46,7 @@ smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
            smoothed <- as.data.frame(do.call(cbind,
              lapply(dataset[, -1, drop = FALSE], function(var_to_smooth) {
                return(tryCatch({
-                 fit <- mgcv::gam(y ~ mgcv::s(x, k = 14),
+                 fit <- mgcv::gam(y ~ s(x, k = 14),
                             data = data.frame(x = as.numeric(dataset$date),
                                               y = var_to_smooth,
                                               stringsAsFactors = FALSE))
@@ -67,7 +72,8 @@ smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
                           # Construct output names for the averages, compute those averages, and
                           # apply said names.
                           output_names <- paste0(names(df)[2:(ncol(df) - 2)], name_append)
-                          holding <- apply(df[, 2:(ncol(df) - 2), drop = FALSE], 2, FUN = stats::median) %>%
+                          holding <- df[, 2:(ncol(df) - 2), drop = FALSE] %>%
+                            apply(2, FUN = stats::median) %>%
                             round %>% t %>% as.data.frame
                           names(holding) <- output_names
 
@@ -75,5 +81,5 @@ smoother <- function(dataset, smooth_level = "day", rename = TRUE) {
                           return(cbind(df[, 1, drop = FALSE], holding))
                         }, name_append = name_append)
 
-  return(result[, !(names(result) %in% c("filter_1","filter_2"))])
+  return(result[, !(names(result) %in% c("filter_1", "filter_2"))])
 }

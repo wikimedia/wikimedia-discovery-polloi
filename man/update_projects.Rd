@@ -7,6 +7,6 @@
 update_projects()
 }
 \description{
-Updates the internal list of Wikimedia projects from the package
-repository to avoid having to reinstall the package from source.
+Updates the internal list of Wikimedia projects from the
+package repository to avoid having to reinstall the package from source.
 }

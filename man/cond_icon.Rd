@@ -7,14 +7,15 @@
 cond_icon(condition, true_direction = "up")
 }
 \arguments{
-\item{condition}{a condition to be evaluated to produce a single TRUE/FALSE}
+\item{condition}{a condition to be evaluated to produce a single
+\code{TRUE}/\code{FALSE}}
 
 \item{true_direction}{which direction represents a positive change. "up" by
-default.}
+default}
 }
 \description{
 allows you to select an appropriate directional icon for a
-change in condition.
+change in condition
 }
 \seealso{
 Other Shiny Dashboarding: \code{\link{check_notify}},

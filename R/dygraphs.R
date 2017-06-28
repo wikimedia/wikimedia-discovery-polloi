@@ -1,19 +1,20 @@
-#'@title Intelligently choose the correct color palette
-#'@description Picks between 3 different color palettes based on number of
-#'  categories to visualize. For <13 categories, uses Set1, Paired, & Set3
-#'  from RColorBrewer. For More than 12 categories, builds a HCL color
-#'  space-based palette.
-#'@param n Number of colors to return (number of categories).
-#'@return A character vector of `n` colors.
-#'@importFrom RColorBrewer brewer.pal
-#'@importFrom colorspace rainbow_hcl
-#'@export
+#' @title Intelligently choose the correct color palette
+#' @description Picks between 3 different color palettes based on number of
+#'   categories to visualize. For <13 categories, uses Set1, Paired, & Set3
+#'   from RColorBrewer. For More than 12 categories, builds a HCL color
+#'   space-based palette.
+#' @param n Number of colors to return (number of categories)
+#' @return A character vector of `n` colors
+#' @importFrom RColorBrewer brewer.pal
+#' @importFrom colorspace rainbow_hcl
+#' @export
 smart_palette <- function(n) {
   if (n < 6) {
     return(brewer.pal(max(3, n), "Set1"))
   } else if (n < 9) {
     return(brewer.pal(n + 1, "Set1")[-6])
   } else if (n <= 10) {
+    # Begin Exclude Linting
     return(c("#00b769", "#d354be", "#436a00", "#0047a7", "#ffac3e", "#00dfe0", "#e5356f", "#01845d", "#ff8c80", "#ad5700")[1:n])
     # ^ made with http://tools.medialab.sciences-po.fr/iwanthue/
     # Settings:
@@ -29,6 +30,7 @@ smart_palette <- function(n) {
     # - Color space is 'colorblind friendly'
     # - 14 colors
     # - soft (k-means)
+    # End Exclude Linting
   } else {
     return(rainbow_hcl(n))
   }
@@ -40,18 +42,18 @@ smart_palette <- function(n) {
 #'   with a bit of custom CSS shipped with the package - but it's surrounded by
 #'   code that allows the function to turn all our usual `data.frame` formats
 #'   into [xts::xts] objects.
-#' @param data a `data.frame` reformatted to be XTS-able.
-#' @param xlab the label to use for the dygraph's x-axis.
-#' @param ylab the label to use for the dygraph's y-axis.
-#' @param title the title to use on the dygraph.
+#' @param data a `data.frame` reformatted to be XTS-able
+#' @param xlab the label to use for the dygraph's x-axis
+#' @param ylab the label to use for the dygraph's y-axis
+#' @param title the title to use on the dygraph
 #' @param legend_name a custom name for the variable in the event that
-#'   `is_single` is TRUE. NULL by default (in which case the variable
-#'   will be named "events").
-#' @param use_si whether to use si labelling (1000 becomes 1K). TRUE by default.
+#'   `is_single` is `TRUE`. `NULL` by default (in which case the variable
+#'   will be named "events")
+#' @param use_si whether to use si labelling (1000 becomes 1K). `TRUE` by default
 #' @param expr an optional expression to evaluate prior to building the dygraph.
-#'   We use this in (for example) reactive graphing.
+#'   We use this in (for example) reactive graphing
 #' @param group Group to associate this plot with. The x-axis zoom level of
-#'   plots within a group is automatically synchronized.
+#'   plots within a group is automatically synchronized
 #' @param ... Additional parameters to pass on to [dygraphs::dyOptions].
 #' @importFrom dygraphs renderDygraph dyCSS dyOptions dyLegend dygraph
 #' @importFrom RColorBrewer brewer.pal
@@ -61,19 +63,16 @@ make_dygraph <- function(data, xlab, ylab, title,
                          legend_name = NULL, use_si = TRUE, expr = NULL,
                          group = NULL, ...) {
 
-  #Evaluate the expression
+  # Evaluate the expression
   expr
 
   # Make sure we're not dealing with tbl_df or data.table nonsense
   class(data) <- "data.frame"
 
-  # If something has gone really awry and we get a <NA> as a date, xts will return an error:
-  #   "Error in xts::periodicity(data) : can not calculate periodicity of 1 observation"
-  #   So let's sanitize before we run xts.
   data <- data[!is.na(data[[1]]), ]
 
-  # If we've only got a single variable reformatting into an XTS looks weird, but otherwise we're
-  #   all cool.
+  # If we've only got a single variable reformatting into an XTS looks weird,
+  # but otherwise we're all cool.
   if (ncol(data) == 2) {
     if (is.null(legend_name)) {
       legend_name <- names(data)[2]
@@ -81,25 +80,27 @@ make_dygraph <- function(data, xlab, ylab, title,
     data <- xts::xts(data[[2]], data[[1]])
     names(data) <- legend_name
   } else {
-    data <- xts::xts(data[,-1], order.by = data[[1]])
+    data <- xts::xts(data[, -1], order.by = data[[1]])
   }
 
   # Construct and return the dygraph.
+  # Begin Exclude Linting
   return(dygraph(data, main = title, xlab = xlab, ylab = ylab, group = group) %>%
            dyLegend(width = 400, show = "always") %>%
            dyOptions(strokeWidth = 3, colors = smart_palette(ncol(data)),
                      drawPoints = FALSE, pointSize = 3, labelsKMB = use_si,
                      includeZero = TRUE, ...) %>%
            dyCSS(css = system.file("custom.css", package = "polloi")))
+  # End Exclude Linting
 }
 
 #' @title Select a Colour Conditionally
 #' @description select a colour based on the true/false nature of a condition.
 #'   Uses green as the "true" colour by default, "red" as false, and
-#' @param condition a condition to be evaluated to produce a single TRUE or
-#'   FALSE value.
-#' @param true_color the colour used to represent a TRUE result. Green by
-#'   default.
+#' @param condition a condition to be evaluated to produce a single `TRUE` or
+#'   `FALSE` value
+#' @param true_color the colour used to represent a `TRUE` result. Green by
+#'   default
 #' @family Shiny Dashboarding
 #' @export
 cond_color <- function(condition, true_color = "green") {
@@ -107,16 +108,17 @@ cond_color <- function(condition, true_color = "green") {
     return("black")
   }
 
-  colours <- c("green","red")
+  colours <- c("green", "red")
   return(ifelse(condition, true_color, colours[!colours == true_color]))
 }
 
 #' @title Select an appropriate directional icon
 #' @description allows you to select an appropriate directional icon for a
-#'   change in condition.
-#' @param condition a condition to be evaluated to produce a single TRUE/FALSE
+#'   change in condition
+#' @param condition a condition to be evaluated to produce a single
+#'   `TRUE`/`FALSE`
 #' @param true_direction which direction represents a positive change. "up" by
-#'   default.
+#'   default
 #' @family Shiny Dashboarding
 #' @export
 cond_icon <- function(condition, true_direction = "up") {

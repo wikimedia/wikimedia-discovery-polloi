@@ -1,12 +1,20 @@
+polloi 0.2.0
+============
+- Adds unit tests and lint checking ([T145445](https://phabricator.wikimedia.org/T145445)).
+- Adds an example dataset (`wdqs_usage`) that is used for running examples and tests.
+- Fixes problem with spline smoothing ([T169125](https://phabricator.wikimedia.org/T169125)).
+- Fixes a whole bunch of stylistic issues (removes lints).
+- Fixes a bug with `compress()` wherein it would yield weird results if the input vector included a 0.
+
 polloi 0.1.9
 ============
-- Adds geography datasets and functions ([T167913](https://phabricator.wikimedia.org/T167913))
+- Adds geography datasets and functions ([T167913](https://phabricator.wikimedia.org/T167913)).
 
 polloi 0.1.8
 ============
-- Updates dataset of prefixes
-- Changes path to download datasets from
-- Uses latest roxygen with markdown support
+- Updates dataset of prefixes.
+- Changes path to download datasets from.
+- Uses latest roxygen with markdown support.
 
 polloi 0.1.7
 ============

@@ -7,10 +7,10 @@
 parse_wikiid(x)
 }
 \arguments{
-\item{x}{A character vector of wikiid's.}
+\item{x}{A \code{character} vector of wikiid's}
 }
 \value{
-A data frame with columns 'language' and 'project'.
+A \code{data.frame} with columns 'language' and 'project'
 }
 \description{
 Uses the internal index of languages, prefixes, wikis, and
