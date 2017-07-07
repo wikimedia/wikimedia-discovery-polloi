@@ -17,3 +17,8 @@ test_that("Objects of different lengths can be c-bound correctly", {
   expect_equal(result[3, , drop = TRUE], c(NA, NA, 3, 6, NA, NA)) # Exclude Linting
   expect_equal(result[, 6, drop = TRUE], c(1, NA, NA))
 })
+
+test_that("Capitalization works", {
+  expect_equal(capitalize_first_letter("hello world"), "Hello World")
+  expect_equal(capitalize_first_letter(c("abc is", "easy as 123")), c("Abc Is", "Easy As 123"))
+})

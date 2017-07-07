@@ -117,3 +117,16 @@ data_select <- function(test, yes_set, no_set){
   }
   return(no_set)
 }
+
+#' @title Capitalize First Letter Of Every Word
+#' @description Capitalizes the first letter of every word.
+#' @details This function is made available under CC-BY-SA 3.0
+#' @param x character vector
+#' @author [Andrie de Vries](https://stackoverflow.com/users/602276/andrie)
+#' @source \url{https://stackoverflow.com/questions/6364783/capitalize-the-first-letter-of-both-words-in-a-two-word-string}
+#' @export
+capitalize_first_letter <- function(x) {
+  return(vapply(strsplit(x, " "), function(s) {
+    return(paste0(toupper(substring(s, 1, 1)), substring(s, 2), collapse = " "))
+  }, ""))
+}

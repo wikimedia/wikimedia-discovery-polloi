@@ -1,12 +1,13 @@
 Package: polloi
 Type: Package
 Title: Common Functionality for Wikimedia Dashboards
-Version: 0.2.0
-Date: 2017-06-28
+Version: 0.2.1
+Date: 2017-07-07
 Authors@R: c(
     person("Mikhail", "Popov", email = "mikhail@wikimedia.org", role = c("aut", "cre")),
     person("Chelsy", "Xie", email = "cxie@wikimedia.org", role = "aut"),
-    person("Oliver", "Keyes", role = "aut", comment = "No longer employed at the Foundation")
+    person("Oliver", "Keyes", role = "aut", comment = "No longer employed at the Foundation"),
+    person("Andrie", "de Vries", role = "ctb", comment = "Capitalization code from StackOverflow")
     )
 Description: This package contains common functionality for all of the
     Wikimedia Foundation's Shiny Dashboards.

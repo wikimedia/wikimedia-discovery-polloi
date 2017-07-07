@@ -15,6 +15,13 @@ compress(x, round_by = 2)
 takes a numeric vector (e.g. 1200, 1300000) and converts it to
 use SI suffixes (e.g. 1.2K, 1.3M)
 }
+\details{
+This function is made available under CC-BY-SA 3.0
+}
 \references{
 \url{https://stackoverflow.com/questions/28159936/formatting-large-currency-or-dollar-values-to-millions-billions/}
+}
+\author{
+Original code: \href{https://stackoverflow.com/users/1855677/42}{42-};
+improvement: Mikhail
 }

@@ -1,3 +1,7 @@
+polloi 0.2.1
+============
+- Adds `capitalize_first_letter`
+
 polloi 0.2.0
 ============
 - Adds unit tests and lint checking ([T145445](https://phabricator.wikimedia.org/T145445)).
