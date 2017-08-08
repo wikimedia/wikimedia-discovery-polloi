@@ -25,5 +25,6 @@ percent_change <- function(x, y = NULL) {
 #' @export
 compress <- function(x, round_by = 2) {
   div <- findInterval(x, c(1, 1e3, 1e6, 1e9, 1e12))
-  return(paste0(round( x / 10 ^ (3 * (div - 1)), round_by), c("", "", "K", "M", "B", "T")[div + 1]))
+  return(paste0(round( x / 10 ^ (3 * ifelse(div - 1 < 0, 0, div - 1)), round_by),
+                c("", "", "K", "M", "B", "T")[div + 1]))
 }
