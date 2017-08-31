@@ -126,7 +126,20 @@ data_select <- function(test, yes_set, no_set){
 #' @source \url{https://stackoverflow.com/questions/6364783/capitalize-the-first-letter-of-both-words-in-a-two-word-string}
 #' @export
 capitalize_first_letter <- function(x) {
-  return(vapply(strsplit(x, " "), function(s) {
+  return(vapply(strsplit(x, " ", fixed = TRUE), function(s) {
     return(paste0(toupper(substring(s, 1, 1)), substring(s, 2), collapse = " "))
   }, ""))
+}
+
+#' @title Reorder Columns Based On Last Observed Value
+#' @description When visualizing multiple series in a dygraph, it can be
+#'   helpful to have the series be in the same order in the legend.
+#' @param x a `data.frame` where the first column is the date and the rest are
+#'   columns to be reordered
+#' @param decreasing which way to sort; `TRUE` by default
+#' @export
+reorder_columns <- function(x, decreasing = TRUE)
+{
+  cols <- unlist(polloi::safe_tail(x, 1)[, -1])
+  return(x[, c(1, order(cols, decreasing = decreasing) + 1)])
 }

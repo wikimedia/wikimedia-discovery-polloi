@@ -1,3 +1,7 @@
+polloi 0.2.2
+============
+- Adds `reorder_columns`
+
 polloi 0.2.1
 ============
 - Adds `capitalize_first_letter`

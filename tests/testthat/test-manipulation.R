@@ -22,3 +22,8 @@ test_that("Capitalization works", {
   expect_equal(capitalize_first_letter("hello world"), "Hello World")
   expect_equal(capitalize_first_letter(c("abc is", "easy as 123")), c("Abc Is", "Easy As 123"))
 })
+
+test_that("Columns are correctly reordered", {
+  df <- data.frame(date = "2017-08-31", A = 1, B = 3, C = 2)
+  expect_equal(names(reorder_columns(df)), c("date", "B", "C", "A"))
+})
