@@ -15,7 +15,9 @@ automata_select(input_id, label = "Include automata (e.g. web crawlers)")
 Creates a checkbox for including/excluding automata.
 }
 \seealso{
-Other inputs: \code{\link{smooth_select}},
-  \code{\link{timeframe_daterange}},
-  \code{\link{timeframe_select}}
+Other inputs: 
+\code{\link{smooth_select}()},
+\code{\link{timeframe_daterange}()},
+\code{\link{timeframe_select}()}
 }
+\concept{inputs}

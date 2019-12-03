@@ -21,7 +21,9 @@ frame (e.g. "Last 90 days").
 \seealso{
 timeframe_daterange "Shiny Dashboarding"
 
-Other inputs: \code{\link{automata_select}},
-  \code{\link{smooth_select}},
-  \code{\link{timeframe_daterange}}
+Other inputs: 
+\code{\link{automata_select}()},
+\code{\link{smooth_select}()},
+\code{\link{timeframe_daterange}()}
 }
+\concept{inputs}

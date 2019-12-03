@@ -4,8 +4,17 @@
 \alias{make_dygraph}
 \title{Construct a Standard Wikimedia Discovery Dygraph}
 \usage{
-make_dygraph(data, xlab, ylab, title, legend_name = NULL, use_si = TRUE,
-  expr = NULL, group = NULL, ...)
+make_dygraph(
+  data,
+  xlab,
+  ylab,
+  title,
+  legend_name = NULL,
+  use_si = TRUE,
+  expr = NULL,
+  group = NULL,
+  ...
+)
 }
 \arguments{
 \item{data}{a \code{data.frame} reformatted to be XTS-able}

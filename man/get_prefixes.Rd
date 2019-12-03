@@ -5,12 +5,11 @@
 \title{Wikimedia Language Prefixes}
 \format{A data frame with 280-some rows and 3 variables:
 \describe{
-\item{language}{Name of language in English.}
-\item{local}{Name of language in local language.}
-\item{prefix}{Prefix used -- e.g. 'en' for 'English'.}
+\item{language}{Name of language in English}
+\item{prefix}{Prefix used -- e.g. 'en' for 'English'}
 }}
 \source{
-\url{https://meta.wikimedia.org/wiki/Template:Table_of_Wikimedia_projects#Projects_per_language_codes}
+\url{https://meta.wikimedia.org/wiki/Template:Table_of_Wikimedia_projects#Projects_per_language_codes} # nolint
 }
 \usage{
 get_prefixes()

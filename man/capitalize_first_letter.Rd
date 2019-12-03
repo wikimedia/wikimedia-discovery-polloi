@@ -4,7 +4,7 @@
 \alias{capitalize_first_letter}
 \title{Capitalize First Letter Of Every Word}
 \source{
-\url{https://stackoverflow.com/questions/6364783/capitalize-the-first-letter-of-both-words-in-a-two-word-string}
+\url{https://stackoverflow.com/questions/6364783/capitalize-the-first-letter-of-both-words-in-a-two-word-string} # nolint
 }
 \usage{
 capitalize_first_letter(x)

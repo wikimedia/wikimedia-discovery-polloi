@@ -15,7 +15,9 @@ smooth_select(input_id, label = "Smoothing")
 Creates a select list for picking smoothing level.
 }
 \seealso{
-Other inputs: \code{\link{automata_select}},
-  \code{\link{timeframe_daterange}},
-  \code{\link{timeframe_select}}
+Other inputs: 
+\code{\link{automata_select}()},
+\code{\link{timeframe_daterange}()},
+\code{\link{timeframe_select}()}
 }
+\concept{inputs}

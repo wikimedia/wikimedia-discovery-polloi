@@ -9,7 +9,7 @@
 \item{date}{\code{Date}}
 \item{homepage}{Web requests made to query.wikidata.org/}
 \item{LDF endpoint}{Requests made to query.wikidata.org/bigdata/ldf}
-\item{SPARQL endpoint}{Requests made to \href{https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service}{WDQS SPARQL endpoint}}
+\item{SPARQL endpoint}{Requests made to \href{https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service}{WDQS SPARQL endpoint}} # nolint
 }}
 \source{
 \url{https://analytics.wikimedia.org/datasets/discovery/metrics/wdqs/basic_usage.tsv}

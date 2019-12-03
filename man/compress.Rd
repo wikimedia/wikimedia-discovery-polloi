@@ -19,7 +19,7 @@ use SI suffixes (e.g. 1.2K, 1.3M)
 This function is made available under CC-BY-SA 3.0
 }
 \references{
-\url{https://stackoverflow.com/questions/28159936/formatting-large-currency-or-dollar-values-to-millions-billions/}
+\url{https://stackoverflow.com/questions/28159936/formatting-large-currency-or-dollar-values-to-millions-billions/} # nolint
 }
 \author{
 Original code: \href{https://stackoverflow.com/users/1855677/42}{42-};

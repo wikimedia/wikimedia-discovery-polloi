@@ -4,8 +4,13 @@
 \alias{subset_by_date_range}
 \title{Subset a data frame by a date range}
 \usage{
-subset_by_date_range(x, range = NULL, from = NULL, to = NULL,
-  date_col = "date")
+subset_by_date_range(
+  x,
+  range = NULL,
+  from = NULL,
+  to = NULL,
+  date_col = "date"
+)
 }
 \arguments{
 \item{x}{\code{data.frame}}

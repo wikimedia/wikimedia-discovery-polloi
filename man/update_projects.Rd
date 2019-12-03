@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{update_projects}
 \alias{update_projects}
-\title{Update internal index of wiki projects.}
+\title{Update internal index of wiki projects}
 \usage{
 update_projects()
 }

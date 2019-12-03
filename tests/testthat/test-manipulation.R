@@ -9,12 +9,12 @@ test_that("Data can be subsetted correctly", {
 })
 
 test_that("Objects of different lengths can be c-bound correctly", {
-  A <- matrix(1:4, 2, 2)
-  B <- matrix(1:6, 3, 2)
-  C <- matrix(2:1, 1, 2)
-  result <- cbind_fill(A, B, C)
+  x <- matrix(1:4, 2, 2)
+  y <- matrix(1:6, 3, 2)
+  z <- matrix(2:1, 1, 2)
+  result <- cbind_fill(x, y, z)
   expect_equal(sum(is.na(result)), 6)
-  expect_equal(result[3, , drop = TRUE], c(NA, NA, 3, 6, NA, NA)) # Exclude Linting
+  expect_equal(result[3, , drop = TRUE], c(NA, NA, 3, 6, NA, NA)) # nolint
   expect_equal(result[, 6, drop = TRUE], c(1, NA, NA))
 })
 

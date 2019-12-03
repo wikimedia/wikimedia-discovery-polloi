@@ -4,8 +4,12 @@
 \alias{time_frame_range}
 \title{Get The Time Range}
 \usage{
-time_frame_range(input_local_timeframe, input_local_daterange,
-  input_global_timeframe, input_global_daterange)
+time_frame_range(
+  input_local_timeframe,
+  input_local_daterange,
+  input_global_timeframe,
+  input_global_daterange
+)
 }
 \arguments{
 \item{input_local_timeframe}{The value of the input corresponding to the
@@ -30,12 +34,17 @@ selections. It is used for \link{subset_by_date_range}.
 }
 \examples{
 \dontrun{
-time_frame_range(input$timeframe, input$daterange,
-                 input$timeframe_global, input$daterange_global)
+time_frame_range(
+  input$timeframe, input$daterange,
+  input$timeframe_global, input$daterange_global
+)
 }
 }
 \seealso{
-Other Shiny Dashboarding: \code{\link{check_notify}},
-  \code{\link{cond_color}}, \code{\link{cond_icon}},
-  \code{\link{na_box}}
+Other Shiny Dashboarding: 
+\code{\link{check_notify}},
+\code{\link{cond_color}()},
+\code{\link{cond_icon}()},
+\code{\link{na_box}()}
 }
+\concept{Shiny Dashboarding}

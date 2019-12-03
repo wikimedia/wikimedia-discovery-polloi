@@ -11,7 +11,7 @@ check_yesterday(dataset, label)
 check_past_week(dataset, label)
 }
 \arguments{
-\item{dataset}{A data.frame with a 'date' column.}
+\item{dataset}{A \code{data.frame} with a 'date' column.}
 
 \item{label}{The label to use in the notification.}
 }
@@ -21,7 +21,10 @@ past week, and create a \code{notificationItem} if missing data has been
 detected.
 }
 \seealso{
-Other Shiny Dashboarding: \code{\link{cond_color}},
-  \code{\link{cond_icon}}, \code{\link{na_box}},
-  \code{\link{time_frame_range}}
+Other Shiny Dashboarding: 
+\code{\link{cond_color}()},
+\code{\link{cond_icon}()},
+\code{\link{na_box}()},
+\code{\link{time_frame_range}()}
 }
+\concept{Shiny Dashboarding}

@@ -1,45 +1,50 @@
 Package: polloi
 Type: Package
 Title: Common Functionality for Wikimedia Dashboards
-Version: 0.2.2
-Date: 2017-08-31
+Version: 0.4.0
+Date: 2019-12-03
 Authors@R: c(
     person("Mikhail", "Popov", email = "mikhail@wikimedia.org", role = c("aut", "cre")),
-    person("Chelsy", "Xie", email = "cxie@wikimedia.org", role = "aut"),
-    person("Oliver", "Keyes", role = "aut", comment = "No longer employed at the Foundation"),
-    person("Andrie", "de Vries", role = "ctb", comment = "Capitalization code from StackOverflow")
+    person("Chelsy", "Xie", role = "aut", comment = "No longer employed at the Foundation"),
+    person("Os", "Keyes", role = "aut", comment = "No longer employed at the Foundation"),
+    person("Andrie", "de Vries", role = "ctb", comment = "Capitalization code from StackOverflow"),
+    person(family = "Wikimedia Foundation", role = "cph")
     )
 Description: This package contains common functionality for all of the
     Wikimedia Foundation's Shiny Dashboards.
 License: MIT + file LICENSE
-URL: https://phabricator.wikimedia.org/diffusion/WDPL/
-BugReports: https://phabricator.wikimedia.org/maniphest/task/create/?projects=Discovery-Analysis
+URL: https://gerrit.wikimedia.org/r/plugins/gitiles/wikimedia/discovery/polloi/
+BugReports: https://phabricator.wikimedia.org/maniphest/task/create/?projects=Product-Analytics&assigned=mpopov
 Depends:
     R (>= 3.1.0)
 Imports:
     colorspace,
-    devtools,
     dplyr,
     dygraphs,
     httr,
+    jsonlite,
     lubridate,
     magrittr,
     mgcv,
     plyr,
+    purrr,
     RColorBrewer,
     readr,
-    rvest,
     shiny,
     shinydashboard,
+    stringi,
     tidyr,
-    xml2,
+    usethis,
     xts,
+    zeallot,
     zoo
 Suggests:
     datasets,
     ISOcodes,
     lintr,
+    roxygen2 (>= 7.0.0),
     testthat
 LazyData: TRUE
+Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.0.1
+RoxygenNote: 7.0.2

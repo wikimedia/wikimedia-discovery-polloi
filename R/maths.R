@@ -21,10 +21,15 @@ percent_change <- function(x, y = NULL) {
 #' @param round_by how many digits to round the resulting numbers by
 #' @author Original code: [42-](https://stackoverflow.com/users/1855677/42);
 #'   improvement: Mikhail
-#' @references \url{https://stackoverflow.com/questions/28159936/formatting-large-currency-or-dollar-values-to-millions-billions/}
+#' @references \url{https://stackoverflow.com/questions/28159936/formatting-large-currency-or-dollar-values-to-millions-billions/} # nolint
 #' @export
 compress <- function(x, round_by = 2) {
-  div <- findInterval(x, c(1, 1e3, 1e6, 1e9, 1e12))
-  return(paste0(round( x / 10 ^ (3 * ifelse(div - 1 < 0, 0, div - 1)), round_by),
-                c("", "", "K", "M", "B", "T")[div + 1]))
+  y <- abs(x)
+  div <- findInterval(y, c(1, 1e3, 1e6, 1e9, 1e12))
+  compressed <- paste0(
+    ifelse(x < 0, "-", ""),
+    round(y / 10 ^ (3 * ifelse(div - 1 < 0, 0, div - 1)), round_by),
+    c("", "", "K", "M", "B", "T")[div + 1]
+  )
+  return(compressed)
 }

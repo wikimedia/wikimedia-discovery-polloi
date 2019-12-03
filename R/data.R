@@ -4,19 +4,18 @@
 #'   Wikiquote, Wikisource, Wikiversity, and Wikivoyage).
 #' @format A data frame with 280-some rows and 3 variables:
 #' \describe{
-#'   \item{language}{Name of language in English.}
-#'   \item{local}{Name of language in local language.}
-#'   \item{prefix}{Prefix used -- e.g. 'en' for 'English'.}
+#'   \item{language}{Name of language in English}
+#'   \item{prefix}{Prefix used -- e.g. 'en' for 'English'}
 #' }
 #' @details English names of languages come from SIL --
 #'   e.g. \url{http://www-01.sil.org/iso639-3/documentation.asp?id=ady} and are
 #'   added to Meta as a Template:Eln --
 #'   e.g. \url{https://meta.wikimedia.org/wiki/Template:Eln_ady}
-#' @source \url{https://meta.wikimedia.org/wiki/Template:Table_of_Wikimedia_projects#Projects_per_language_codes}
+#' @source \url{https://meta.wikimedia.org/wiki/Template:Table_of_Wikimedia_projects#Projects_per_language_codes} # nolint
 #' @seealso [update_prefixes], [get_projects], [get_langproj]
 #' @export
 get_prefixes <- function() {
-  return(readr::read_csv(system.file("extdata/prefixes.csv", package = "polloi"), col_types = "ccc"))
+  return(readr::read_csv(system.file("extdata/prefixes.csv", package = "polloi"), col_types = "cc"))
 }
 
 #' @title Wikimedia Projects
@@ -33,7 +32,11 @@ get_prefixes <- function() {
 #' @seealso [update_projects], [get_prefixes], [get_langproj]
 #' @export
 get_projects <- function() {
-  return(readr::read_csv(system.file("extdata/projects.csv", package = "polloi"), col_types = "cclc"))
+  projects <- readr::read_csv(
+    system.file("extdata/projects.csv", package = "polloi"),
+    col_types = "cclc"
+  )
+  return(projects)
 }
 
 #' @title Wikimedia Language-Project Tuples
@@ -51,13 +54,21 @@ get_projects <- function() {
 get_langproj <- function() {
   prefixes <- get_prefixes()
   projects <- get_projects()
-  temp <- data.frame(wikiid = as.vector(outer(prefixes$prefix,
-                                              projects$wikiid[projects$multilingual],
-                                              paste0)),
-                     name = as.vector(outer(prefixes$language,
-                                            projects$project[projects$multilingual],
-                                            paste, sep = ":")),
-                     stringsAsFactors = FALSE)
+  temp <- data.frame(
+    wikiid = as.vector(
+      outer(prefixes$prefix,
+            projects$wikiid[projects$multilingual],
+            paste0
+      )
+    ),
+    name = as.vector(
+      outer(
+        prefixes$language,
+        projects$project[projects$multilingual],
+        paste, sep = ":"
+      )
+    ),
+    stringsAsFactors = FALSE)
   projects <- projects[!projects$multilingual, c("wikiid", "language", "project")]
   result <- temp %>%
     separate("name", into = c("language", "project"), sep = ":") %>%
@@ -81,7 +92,7 @@ get_langproj <- function() {
 #'   \item{date}{`Date`}
 #'   \item{homepage}{Web requests made to query.wikidata.org/}
 #'   \item{LDF endpoint}{Requests made to query.wikidata.org/bigdata/ldf}
-#'   \item{SPARQL endpoint}{Requests made to [WDQS SPARQL endpoint](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service)}
+#'   \item{SPARQL endpoint}{Requests made to [WDQS SPARQL endpoint](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service)} # nolint
 #' }
 #' @source \url{https://analytics.wikimedia.org/datasets/discovery/metrics/wdqs/basic_usage.tsv}
 #' @seealso [get_sample_data]
@@ -102,7 +113,11 @@ get_langproj <- function() {
 #'   \url{https://phabricator.wikimedia.org/T136257#2399411} for U.S. regions.
 #' @export
 get_us_state <- function() {
-  return(readr::read_csv(system.file("extdata/us_state_region.csv", package = "polloi"), col_types = "ccc"))
+  us_states <- readr::read_csv(
+    system.file("extdata/us_state_region.csv", package = "polloi"),
+    col_types = "ccc"
+  )
+  return(us_states)
 }
 
 #' @title All Countries and U.S. States
@@ -117,5 +132,9 @@ get_us_state <- function() {
 #'  `state.region` from package `datasets`.
 #' @export
 get_country_state <- function() {
-  return(readr::read_csv(system.file("extdata/all_countries_us_states.csv", package = "polloi"), col_types = "cc"))
+  country_states <- readr::read_csv(
+    system.file("extdata/all_countries_us_states.csv", package = "polloi"),
+    col_types = "cc"
+  )
+  return(country_states)
 }

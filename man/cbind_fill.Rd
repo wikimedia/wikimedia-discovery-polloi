@@ -23,7 +23,7 @@ C <- matrix(2:1, 1, 2)
 cbind_fill(A, B, C)
 }
 \references{
-\url{http://r.789695.n4.nabble.com/How-to-join-matrices-of-different-row-length-from-a-list-td3177212.html}
+\url{http://r.789695.n4.nabble.com/How-to-join-matrices-of-different-row-length-from-a-list-td3177212.html} # nolint
 }
 \author{
 D. Rizopoulos

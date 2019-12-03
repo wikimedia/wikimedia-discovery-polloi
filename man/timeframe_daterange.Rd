@@ -19,7 +19,9 @@ A \link[shiny:conditionalPanel]{shiny::conditionalPanel} containing a \link[shin
 Creates a date ranger selector.
 }
 \seealso{
-Other inputs: \code{\link{automata_select}},
-  \code{\link{smooth_select}},
-  \code{\link{timeframe_select}}
+Other inputs: 
+\code{\link{automata_select}()},
+\code{\link{smooth_select}()},
+\code{\link{timeframe_select}()}
 }
+\concept{inputs}

@@ -39,7 +39,7 @@ safe_tail <- function(x, n, silent = TRUE) {
 #' @param top whether it should be the top (TRUE) or bottom (FALSE) half. Set
 #'   to TRUE by default.
 #' @export
-half <- function(x, top = TRUE){
+half <- function(x, top = TRUE) {
   if (top) {
     return(utils::head(x, n = length(x) / 2))
   }
@@ -92,7 +92,7 @@ subset_by_date_range <- function(x, range = NULL, from = NULL, to = NULL, date_c
 #' B <- matrix(1:6, 3, 2)
 #' C <- matrix(2:1, 1, 2)
 #' cbind_fill(A, B, C)
-#' @references \url{http://r.789695.n4.nabble.com/How-to-join-matrices-of-different-row-length-from-a-list-td3177212.html}
+#' @references \url{http://r.789695.n4.nabble.com/How-to-join-matrices-of-different-row-length-from-a-list-td3177212.html} # nolint
 #' @author D. Rizopoulos
 #' @export
 cbind_fill <- function(...) {
@@ -111,7 +111,7 @@ cbind_fill <- function(...) {
 #' @param no_set the dataset to return if `test` is false.
 #' @return The appropriate object.
 #' @export
-data_select <- function(test, yes_set, no_set){
+data_select <- function(test, yes_set, no_set) {
   if (test) {
     return(yes_set)
   }
@@ -123,7 +123,7 @@ data_select <- function(test, yes_set, no_set){
 #' @details This function is made available under CC-BY-SA 3.0
 #' @param x character vector
 #' @author [Andrie de Vries](https://stackoverflow.com/users/602276/andrie)
-#' @source \url{https://stackoverflow.com/questions/6364783/capitalize-the-first-letter-of-both-words-in-a-two-word-string}
+#' @source \url{https://stackoverflow.com/questions/6364783/capitalize-the-first-letter-of-both-words-in-a-two-word-string} # nolint
 #' @export
 capitalize_first_letter <- function(x) {
   return(vapply(strsplit(x, " ", fixed = TRUE), function(s) {
